@@ -1,0 +1,44 @@
+site_name: Py++ Lang
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - python
+    - cpp
+    - json
+nav:
+  - What is Py++: index.md
+  - Installation: installation.md
+  - CLI usage: cli_usage.md
+  - Introduction to writing Py++ code: introduction.md
+  - Major Announcements: major_announcements.md
+  - Minor Announcements: minor_announcements.md
+  - Feature requests: feature_requests.md
+  - Bug reports: bug_reports.md
+  - Language features:
+      - list: types/list.md
+      - set: types/set.md
+      - dictionary: types/dictionary.md
+      - default dictionary: types/default_dictionary.md
+      - comprehensions: types/comprehensions.md
+      - string: types/string.md
+      - tuple: types/tuple.md
+      - number types: types/number_types.md
+      - for loops: types/for_loops.md
+      - while loops: types/while_loops.md
+      - union: types/union_type.md
+      - slice: types/slice.md
+      - type alias: types/type_aliases.md
+      - functions: types/functions.md
+      - class: types/classes.md
+      - interface: types/interfaces.md
+      - config class: types/config_classes.md
+      - other way to define a class: types/other_classes.md
+  - The Py++ standard library:
+      - math: types/math.md
+      - time: stdlib/time.md
+      - random: stdlib/random.md
+      - os: stdlib/os.md
+      - shutil: stdlib/shutil.md
+  - The pypp_python library: 
+      - API docs: pypp_python.md
