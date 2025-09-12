@@ -68,15 +68,15 @@ Most of the Python dict methods are supported in Py++, and for some of them ther
 
 These are the supported methods
 
-- get
-- pop
-- update
-- setdefault
-- keys
-- values
-- items
-- clear
-- copy
+- `get`
+- `pop`
+- `update`
+- `setdefault`
+- `keys`
+- `values`
+- `items`
+- `clear`
+- `copy`
 
 The below sections explain the slight differences compared to Python.
 

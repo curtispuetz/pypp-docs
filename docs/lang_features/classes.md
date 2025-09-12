@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pypp_python import Valu
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass
 class Greeter:
     name: str
     prefix: Valu(str)
@@ -18,7 +18,10 @@ class Greeter:
         return f"Hello, {self.prefix} {self.name}!"
 ```
 
-The frozen and slots options are supported (slots does not do anything to change the generated C++ code; its only for Python).
+- In Py++, the first argument of methods must be called `self`. Other names are not supported.
+- The frozen and slots options (i.e. `@dataclass(frozen=True, slots=True)`) are supported
+    - frozen makes the data members `const` in the generated C++
+    - slots does not do anything to change the generated C++ code; it only affects the Python interpreter
 
 ## Instantiation
 
@@ -33,10 +36,6 @@ def pseudo_fn():
     jane: str = "Jane"
     greeter2: auto = Greeter(jane, "Mrs.")
 ```
-
-Unrelated to classes, this is a teaching moment for Py++:
-
-'name' is a pass-by-reference parameter and 'prefix' is a pass-by-value parameter. For pass-by-reference parameters, we cannot call with a temporary value. This is why we only used a temporary value for 'prefix' and not for 'name'.
 
 ## Factory function pattern
 

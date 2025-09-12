@@ -1,44 +1,75 @@
 site_name: Py++ Lang
 theme:
-  name: readthedocs
-  highlightjs: true
-  hljs_languages:
-    - python
-    - cpp
-    - json
+  name: material
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+markdown_extensions:
+- pymdownx.highlight
+- pymdownx.superfences
 nav:
   - What is Py++: index.md
   - Installation: installation.md
   - CLI usage: cli_usage.md
-  - Introduction to writing Py++ code: introduction.md
+  - Learn Py++: learn_pypp.md
   - Major Announcements: major_announcements.md
   - Minor Announcements: minor_announcements.md
   - Feature requests: feature_requests.md
   - Bug reports: bug_reports.md
   - Language features:
-      - list: types/list.md
-      - set: types/set.md
-      - dictionary: types/dictionary.md
-      - default dictionary: types/default_dictionary.md
-      - comprehensions: types/comprehensions.md
-      - string: types/string.md
-      - tuple: types/tuple.md
-      - number types: types/number_types.md
-      - for loops: types/for_loops.md
-      - while loops: types/while_loops.md
-      - union: types/union_type.md
-      - slice: types/slice.md
-      - type alias: types/type_aliases.md
-      - functions: types/functions.md
-      - class: types/classes.md
-      - interface: types/interfaces.md
-      - config class: types/config_classes.md
-      - other way to define a class: types/other_classes.md
+      - manual memory management (Ref, Valu, and mov): lang_features/manual_memory_management.md
+      - types:
+        - list: lang_features/types/list.md
+        - set: lang_features/types/set.md
+        - dictionary: lang_features/types/dict.md
+        - default dictionary: lang_features/types/default_dictionary.md
+        - numbers: lang_features/types/number_types.md
+        - string: lang_features/types/string.md
+        - tuple: lang_features/types/tuple.md
+        - union: lang_features/types/union_type.md
+        - slice: lang_features/types/slice.md
+        - list of primitive types: lang_features/types/primitive_types.md
+      - operators:
+        - boolean: lang_features/operators/boolean.md
+        - comparison: lang_features/operators/comparison.md
+        - unary: lang_features/operators/unary.md
+        - other: lang_features/operators/other.md
+      - built-in functions: lang_features/built_in_functions.md
+      - if statements: lang_features/if_elif_else.md
+      - for loops: lang_features/for_loops.md
+      - while loops: lang_features/while_loops.md
+      - functions: lang_features/functions.md
+      - lambda functions: lang_features/lambda_functions.md
+      - classes: lang_features/classes.md
+      - interfaces: lang_features/interfaces.md
+      - config classes: lang_features/config_classes.md
+      - conditional expressions: lang_features/conditional_expression.md
+      - imports: lang_features/imports.md
+      - yield and yield from: lang_features/yield.md
+      - comprehensions: lang_features/comprehensions.md
+      - type aliases: lang_features/type_aliases.md
+      - exceptions:
+        - exception handling: lang_features/exceptions/handling.md
+        - defining your own exceptions: lang_features/exceptions/defining.md
   - The Py++ standard library:
-      - math: types/math.md
+      - math: stdlib/math.md
       - time: stdlib/time.md
       - random: stdlib/random.md
       - os: stdlib/os.md
       - shutil: stdlib/shutil.md
+  - Advanced topics:
+      - Solving undefined behavior: advanced/solving_undefined_behavior.md
   - The pypp_python library: 
       - API docs: pypp_python.md
