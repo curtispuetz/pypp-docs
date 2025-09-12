@@ -37,22 +37,22 @@ Use the remove or discard method
 All of the Python set methods are supported in Py++.
 
 The methods are listed below and documented in the Python docs.
-- add
-- remove
-- discard
-- pop
-- clear
-- isdisjoint
-- issubset
-- issuperset
-- union
-- intersection
-- difference
-- symmetric_difference
-- update
-- difference_update
-- symmetric_difference_update
-- copy
+- `add`
+- `remove`
+- `discard`
+- `pop`
+- `clear`
+- `isdisjoint`
+- `issubset`
+- `issuperset`
+- `union`
+- `intersection`
+- `difference`
+- `symmetric_difference`
+- `update`
+- `difference_update`
+- `symmetric_difference_update`
+- `copy`
 
 ## Other operations
 

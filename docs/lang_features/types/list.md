@@ -125,18 +125,19 @@ Use the pop method
 All of the Python list methods are supported in Py++.
 
 The methods are listed below and documented in the Python docs.
-- append
-- extend
-- insert
-- remove
-- pop
-- clear
-- index
-- count
-- sort
-- reverse
-- copy
+- `append`
+- `extend`
+- `insert`
+- `remove`
+- `pop`
+- `clear`
+- `index`
+- `count`
+- `sort`
+- `reverse`
+- `copy`
 
+Note: you can only pass temporaries or use `mov()` with the `append`, `extend`, and `insert` methods.
 
 ## list_reserve
 

@@ -13,7 +13,7 @@ def pseudo_fn():
     b: Uni[int, list[int]] = Uni([1, 2, 3])
     # or
     c: auto = Uni[float, str](3.14)
-    # with a None option
+    # with a None option (i.e Optional)
     d: auto = Uni[str, None](None)
 ```
 
@@ -38,7 +38,7 @@ def optional_str_union(u: Uni[str, None]):
         string: str = ug(u, str)
 ```
 
-ug stands for 'union-get'.
+`ug` stands for 'union-get'.
 
 ## Other operations
 

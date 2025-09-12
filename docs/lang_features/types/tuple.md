@@ -44,8 +44,8 @@ def pseudo_fn(t: tuple[int, float, str]):
 
 The two Python tuple methods are supported in Py++ and documented in the Python docs
 
-- count
-- index
+- `count`
+- `index`
 
 ## Other operations
 
