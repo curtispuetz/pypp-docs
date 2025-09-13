@@ -57,11 +57,12 @@ nav:
       - config classes: lang_features/config_classes.md
       - conditional expressions: lang_features/conditional_expression.md
       - imports: lang_features/imports.md
+      - assert: lang_features/assert.md
       - yield and yield from: lang_features/yield.md
       - comprehensions: lang_features/comprehensions.md
       - type aliases: lang_features/type_aliases.md
       - exceptions:
-        - exception handling: lang_features/exceptions/handling.md
+        - handling: lang_features/exceptions/handling.md
         - defining your own exceptions: lang_features/exceptions/defining.md
   - The Py++ standard library:
       - math: stdlib/math.md

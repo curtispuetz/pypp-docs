@@ -8,7 +8,7 @@ Same as Python
 
 ```python
 def pseudo_fn(integers: list[int], strings: list[str]):
-    # typical
+    # basic
     for integer in integers:
         print(integer)
 

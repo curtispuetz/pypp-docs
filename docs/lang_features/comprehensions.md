@@ -14,7 +14,9 @@ from pypp_python import mov
 
 def list_comp_fn():
     squares: list[int] = [x * x for x in range(10)]
+
     fibonacci: list[int] = [x + y for x, y in zip([0, 1], [1, 2])]
+
     sequence: list[int] = [mov(i) for i in range(10)]  # must use mov here
 ```
 
@@ -63,6 +65,7 @@ from pypp_python import mov
 
 def set_comp_fn():
     squares: set[int] = {x * x for x in range(4)}
+
     sequence: set[int] = {mov(i) for i in range(4)}  # must use mov here
 ```
 

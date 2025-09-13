@@ -9,10 +9,13 @@ from pypp_python import Uni, auto
 
 
 def pseudo_fn():
+    # without auto
     a: Uni[int, float, str, list[int]] = Uni("value")
     b: Uni[int, list[int]] = Uni([1, 2, 3])
-    # or
+    
+    # with auto
     c: auto = Uni[float, str](3.14)
+    
     # with a None option (i.e Optional)
     d: auto = Uni[str, None](None)
 ```

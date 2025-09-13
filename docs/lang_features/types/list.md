@@ -11,16 +11,22 @@ Similar to Python:
 def pseudo_fn():
     # empty
     empty_list: list[int] = []
+
     # empty option 2
     empty_list_2: list[int] = list[int]()
+
     # with some values
     short_list: list[int] = [1, 2, 3, 4]
+
     # repeating
     repeating_list: list[int] = [1, 2, 3] * 50
+
     # from a different data structure (set, dict, or str)
     list_of_strs: list[str] = list("hello")
+
     # copying another list
     list_copy: list[int] = short_list.copy()
+
     # copying another list option 2 and 3
     list_copy_2: list[int] = list(short_list)
     list_copy_3: list[int] = short_list[:]
@@ -37,6 +43,7 @@ def pseudo_fn():
     a: list[int] = int_list(1000)
     b: list[float] = float_list(1000)
     c: list[str] = str_list(1000)
+
     # With defaults
     d: list[int] = int_list(1000, 2)
     e: list[float] = float_list(1000, 1.1)
@@ -111,6 +118,7 @@ def pseudo_fn(my_list: list[str]):
     c: list[str] = my_list[::2]
     d: list[str] = my_list[5:1:-1]
     # etc.
+
     # Or, with a slice object
     my_slice: slice = slice(0, 100, 2)
     e: list[str] = my_list[my_slice]

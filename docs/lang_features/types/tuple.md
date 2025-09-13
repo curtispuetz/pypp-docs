@@ -20,6 +20,7 @@ Unfortunately, you cannot use the `[]` operator to access an element. Instead, y
 ```python
 from pypp_python import tg
 
+
 def pseudo_fn(t: tuple[int, float, str]):
     index: int = 1
     value: float = tg(d, index)
@@ -32,9 +33,13 @@ tg standard for 'tuple-get'
 Same as Python
 
 ```python
+from my_module import create_len_2_tuple_fn
+
+
 def pseudo_fn(t: tuple[int, float, str]):
     # from a variable
     a, b, c = t
+
     # from a function call
     u, v = create_len_2_tuple_fn()
 
