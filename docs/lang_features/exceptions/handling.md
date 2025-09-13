@@ -1,4 +1,4 @@
-# Exception Handling
+# Exception handling
 
 Like Python exception handling with `try...except` statements, but the following is not supported:
 

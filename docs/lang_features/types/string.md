@@ -9,14 +9,19 @@ Same as Python
 def pseudo_fn():
     # empty
     a: str = ""
+
     # some characters
     b: str = "hello"
+
     # repeating
     c: str = "abc" * 5
+
     # copy another string
     d: str = c
+
     # with single quoates
     e: str = 'hello'
+
     # f-strings
     f: str = f"{e}, world!\n{c}"
 ```
@@ -41,6 +46,7 @@ def pseudo_fn(my_str: str):
     c: str = my_str[::2]
     d: str = my_str[5:1:-1]
     # etc.
+
     # Or, with a slice object
     my_slice: slice = slice(0, 100, 2)
     e: str = my_str[my_slice]
@@ -53,7 +59,7 @@ Not all of the Python string methods are supported in Py++ at the moment.
 The supported methods are listed below and documented in the Python docs.
 
 - `split`
-- `join`
+- `join` (only works with lists for now)
 - `replace`
 - `startswith`
 - `endswith`
@@ -66,7 +72,6 @@ The supported methods are listed below and documented in the Python docs.
 - `rstrip`
 - `upper`
 - `lower`
-
 
 ## Other operations
 
