@@ -11,17 +11,22 @@ Similar to Python:
 def pseudo_fn():
     # empty
     empty_dict: dict[int, str] = {}
+
     # empty option 2
     empty_dict_2: dict[int, str] = dict[int, str]()
+
     # with some values
     short_dict: dict[int, str] = {
         0: "zero",
         1: "one"
     }
+
     # from a list of len(2) tuples
     var: dict[int, str] = dict([(0, "zero"), (1: "one")])
+
     # copying another dict
     dict_copy: dict[int, str] = short_dict.copy()
+
     # copying another dict option 2
     dict_copy_2: dict[int, str] = dict(short_dict)
 
@@ -117,8 +122,10 @@ They are meant to be used for iterations only. I.e.:
 def pseudo_fn(d: dict[int, str]):
     for k in d.keys():
         print(k)
+
     for v in d.values():
         print(v)
+
     for k, v in d.items():
         print(k, v)
 ```

@@ -16,11 +16,14 @@ def pseudo_fn():
     # empty
     a: auto = defaultdict[int, str](str)
     b: auto = defaultdict[int, list[str]](list[str])
-    # empty with custom default lambda
+
+    # empty with a custom default lambda
     c: auto = defaultdict[int, str](lambda: "default")
     d: auto = defaultdict[int, CustomType](lambda: CustomType())
-    # with some values
+
+    # with some initial values
     e: auto = defaultdict[int, str](str, {1: "one", 3: "three"})
+
     # copying another defaultdict
     f: auto = e.copy()
 ```

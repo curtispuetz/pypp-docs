@@ -2,6 +2,8 @@
 
 Exactly like Python if statements
 
+## Usage
+
 ```python
 def pseudo_fn(a: bool, b: bool):
     if a:

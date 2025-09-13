@@ -30,8 +30,10 @@ from pypp_python import auto
 
 
 def pseudo_fn():
+    # without auto
     bob: str = "Bob"
     greeter1: Greeter = Greeter(bob, "Mr.")
+    
     # with auto
     jane: str = "Jane"
     greeter2: auto = Greeter(jane, "Mrs.")

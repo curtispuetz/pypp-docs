@@ -47,15 +47,21 @@ from my_type import MyType
 
 
 def pseudo_fn():
+    # primitive types
     add(1, 2)
 
+    # pass-by-reference
     a: list[int] = [1, 2, 3]
     a_repeated: list[int] = repeat_new(a)
 
+    # pass-by-value with a temporary
     my_type_0: MyType = my_type_factory([9, 8, 7])
+
+    # pass-by-value with `mov()`
     b: list[int] = [1, 2, 3]
     my_type_1: MyType = my_type_factory(mov(b))
 
+    # return-by-reference
     c: list[int] = [1, 2]
     c_ref: Ref(list[int]) = repeat(c)
 ```

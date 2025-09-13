@@ -27,7 +27,7 @@ def yield_from_example() -> Iterator[int]:
 
 Note: You cannot yield None in Py++
 
-## Using a generator function
+## Usage
 
 Generator functions can only be used in for loops
 
