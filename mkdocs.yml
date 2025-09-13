@@ -61,9 +61,12 @@ nav:
       - yield and yield from: lang_features/yield.md
       - comprehensions: lang_features/comprehensions.md
       - type aliases: lang_features/type_aliases.md
+      - with: lang_features/with.md
       - exceptions:
         - handling: lang_features/exceptions/handling.md
-        - defining your own exceptions: lang_features/exceptions/defining.md
+        - defining your own: lang_features/exceptions/defining.md
+        - raising: lang_features/exceptions/raising.md
+        - supported types: lang_features/exceptions/supported_types.md
   - The Py++ standard library:
       - math: stdlib/math.md
       - time: stdlib/time.md
