@@ -21,6 +21,8 @@ Similar to Python
 - `to_uint32_t`
 - `to_uint64_t`
 
+`int()`, `float()`, and `to_float32()` can throw ValueError.
+
 ### Usage
 
 To use the later ones, they can be imported
@@ -39,7 +41,7 @@ from pypp_python import (
 )
 ```
 
-Note: even though we have to import them, we will still call them built-in functions.
+Even though we have to import them, we will still call them built-in functions.
 
 
 ## Mathematical
@@ -56,6 +58,9 @@ Note: even though we have to import them, we will still call them built-in funct
 ## Utility
 
 - `len`
+- `open`
+
+`open` can only be used with a [`with` statement](with.md)
 
 ## Iterating and sorting
 

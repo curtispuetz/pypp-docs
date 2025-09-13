@@ -157,7 +157,7 @@ if __main__ == "__main__":
     b: ClassB = ClassB([1, 2, 3])  # [1, 2, 3] is a temporary
 ```
 
-### mov()
+### Using `mov()`
 
 `mov()` is like `std::move()` in C++. In fact, the Py++ transpiler just translates `mov()` to `std::move()`. It is a way of moving ownership of data to somewhere else.
 
@@ -174,9 +174,9 @@ class ClassB:
 
 
 if __main__ == "__main__":
-    my_list: list[int] = [1, 2, 3]  # my_list is an owner.
+    my_list: list[int] = [1, 2, 3]  # my_list is an owner
 
-    b: ClassB = ClassB(mov(my_list))  # after this, b.list_member_b owns the data.
+    b: ClassB = ClassB(mov(my_list))  # after this, b.list_member_b owns the data
 
     # my_list should not be used anymore
 ```
