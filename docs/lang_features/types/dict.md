@@ -34,7 +34,7 @@ def pseudo_fn():
 
 ### Dictionary Comprehensions
 
-Are supported in Py++. See [comprehensions](comprehensions.md).
+Are supported in Py++. See [comprehensions](../comprehensions.md).
 
 ## Assigning a key-value pair
 

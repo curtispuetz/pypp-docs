@@ -30,7 +30,7 @@ def pseudo_fn():
 
 ### Set Comprehensions
 
-Are supported in Py++. See [comprehensions](comprehensions.md).
+Are supported in Py++. See [comprehensions](../comprehensions.md).
 
 ## Deleting elements
 

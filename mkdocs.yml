@@ -70,7 +70,7 @@ nav:
       - resources: lang_features/resources.md
       - underscores: lang_features/underscores.md
       - constants: lang_features/constants.md
-  - The Py++ standard library:
+  - Standard library:
       - math: stl/math.md
       - time: stl/time.md
       - random: stl/random.md
@@ -78,5 +78,3 @@ nav:
       - shutil: stl/shutil.md
   - Advanced topics:
       - Solving undefined behavior: advanced/solving_undefined_behavior.md
-  - The pypp_python library: 
-      - API docs: pypp_python.md
