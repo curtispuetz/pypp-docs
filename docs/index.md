@@ -1,4 +1,6 @@
-# Welcome to Py++ docs
+# Welcome to Py++ docs [WIP]
+
+[WIP] - about 90% finished. Please check back in a few days.
 
 Py++ is a programming language written with Python syntax, that transpiles to C++ code and then uses a C++ compiler. Py++ is statically typed and requires manual memory management.
 
@@ -8,7 +10,7 @@ The performance of the language is virtually identical to C++. A good way to thi
 
 The main purpose is to shorten the amount of code you need to write to do the same thing and to make the code more readable. The code of Py++ is much shorter and more readable than the C++ code you would have to write for the same thing.
 
-Another main purpose is to make reasoning about your code eaiser. Py++ is accomplishing this by only supporting a subset of C++ features, so that you don't have to think about as many possibilities.
+Another main purpose is to make reasoning about your code eaiser. Py++ is accomplishing this by only supporting a subset of C++ features, so that you don't have to think about as many possibilities. The goal is to be able to reason about your code almost like it is Python code.
 
 Another advantage is that library management is more standardized in Py++. You can use pip for Py++ libraries, just like how it is for a Python project.
 
@@ -21,22 +23,24 @@ Before looking at more, understand what the Py++ source code does. With this und
 It's a program that lets you transpile Python synxtax'd code to C++. And from there you just have a normal C++ CMake project, so you are set now to build and run your code. Also:
 - Your Python syntax'd code is valid Python code, so you can alternatively run it with the Python interpreter. 
 - Your Python syntax'd code has to follow certain rules and conventions to work
-    - The code can't just be any Python code; its statically typed and requires manual memory management.
-    - When you break a rule or convention, you will idealy either get a error from the Py++ transpiler, or an error from the C++ compiler.
+    - The code can't just be any Python code (its statically typed and requires manual memory management)
+    - When you break a rule or convention, you will idealy either get a error from the Py++ transpiler, or an error from your C++ compiler.
 - The generated C++ code is human-readable, corresponding very closely to your Python synxtax'd code files, folders, and logic.
-- You can get undefined behavior (just like C++)
-    - However, Py++ aspires to throw transpilation errors for these cases (will work on that in the future)
+
+And a few other points:
+
+- You can get undefined behavior (just like with C++)
+    - However, Py++ aspires to throw transpilation errors for cases of potential undefined behavior (will work on that in the future)
 - Your code can run differently depending on if you use the C++ generated executable or the Python interpreter
     - However, again, Py++ aspires to throw transpilation errors for these cases (will work on that in the future)
 
-The last two points you are free to forget about until you become an advanced Py++ programmer.
 
 
 ## Disclaimer
 
 Py++ is new, and will likely have bugs. 
 
-If you find a bug, or if you find something that is not as performant as the C++ code you would write for the same problem (which is also a Py++ bug), please file a bug report: TODO link.
+If you find a bug, or if you find something that cannot be as performant as the C++ code you would write for the same problem (which is also a Py++ bug), please file a bug report: [issues](https://github.com/curtispuetz/pypp-cli/issues).
 
 ## Other things of note
 
@@ -45,10 +49,10 @@ If you find a bug, or if you find something that is not as performant as the C++
 
 ### External libraries
 
-You can write Pure Py++ libraries and upload them to PyPI. There is also another library type that I am calling bridge libraries. These bridge libraries try to solve the problem of how if you do a project in C++, you have a huge ecosystem of tooling at your disposal, whereas if you do a project in Py++, you have a very limited ecosystem. They try to solve the problem by making it easy to create a library for an existing C++ library. Bridge libraries just point to the C++ code for the library, and contain JSON files that specify how the Py++ transpiler should behave to work with the library. 
+You can write Pure Py++ libraries and upload them to PyPI. There is also another library type called bridge libraries. Bridge libraries try to solve the problem of how if you do a project in C++, you have a huge ecosystem of tooling at your disposal, whereas if you do a project in Py++, you have a very limited ecosystem. They try to solve the problem by making it easy to create a Py++ library for an existing C++ library. Bridge libraries just point to the C++ library code, and ideally some equivalent Python code, and contain JSON files that specify how the Py++ transpiler should translate the Python to C++. 
 
-TODO: instead of writing this here lets have a section for bridge libraries. I've created bridge libraries for GLFW and glad (OpenGL) that are working decently well at the moment, so I can develop a game engine with Py++.
+TODO: instead of writing this here lets have a section for bridge libraries. I've created bridge libraries for GLFW and glad (OpenGL) that are working decently well at the moment, so I can develop a graphics engine with Py++.
 
 ## Where do I start?
 
-Start by reading [Learn Py++](learn_pypp.md) to understand the basics, and then beyond that, all the features of the language are described in the Language Features section
+I'd recommend to start by reading the [CLI usage](cli_usage.md) page, and then the [Learn Py++](learn_pypp.md) page to understand the basics. Beyond that, you could look at all the features of the language described in the Language features section. Once you are done reading [CLI usage](cli_usage.md) and [Learn Py++](learn_pypp.md), I would say you are ready to install Py++ and start playing around.
