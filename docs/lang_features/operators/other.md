@@ -1,6 +1,6 @@
 # Other operators
 
-Like Python except `@` is not supported.
+Like Python, except `@` is not supported.
 
 ## Supported
 
