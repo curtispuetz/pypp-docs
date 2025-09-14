@@ -6,16 +6,18 @@ Like Python with statements, but only usage with `open()` is supported.
 
 ```python
 import os
-from pypp_python import pypp_get_resoruces
+from pypp_python import res_dir
 
 
 def pseudo_fn():
-    test_dir: str = pypp_get_resources("test_dir")
-    text_file: str = os.path.join(test_dir, "text.txt")
+    resources_dir: str = res_dir()
+    text_file: str = os.path.join(resources_dir, "text.txt")
     with open(text_file, "w") as file:
         file.write("Line 1\n")
         file.write("Line 2\n")
 ```
+
+`res_dir()` is a built-in function that gives us the path to the 'resources' project directory.
 
 ## Supported `open()` modes
 

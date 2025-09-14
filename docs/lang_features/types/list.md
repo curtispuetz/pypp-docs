@@ -33,7 +33,7 @@ def pseudo_fn():
 ```
 
 ### From size and default value
-In C++, you can initialize a std::vector efficiently by just passing it a size and, optionally, a default value (i.e. `std::vector<int> my_vec(1000, 2)`). In Py++, you can get this efficiency also with the int_list, float_list, and str_list functions:
+In C++, you can initialize a `std::vector` efficiently by just passing it a size and, optionally, a default value (i.e. `std::vector<int> my_vec(1000, 2)`). In Py++, you can get this efficiency also with the `int_list`, `float_list`, and `str_list` functions:
 
 ```python
 from pypp_python import int_list, float_list, str_list
@@ -50,7 +50,7 @@ def pseudo_fn():
     f: list[str] = str_list(1000, "hello")
 ```
 
-This translates to the following .h and .cpp files:
+For reference, this translates to the following .h and .cpp files:
 
 ```cpp
 #pragma once

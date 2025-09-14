@@ -59,9 +59,9 @@ def pseudo_fn(d: dict[int, str]):
 
 `dg` stands for 'dict-get'
 
-### Note about using '[]' operator
+### Note about using `[]` operator
 
-If the key that you are using exists in the dictionary, then using the '[]' operator will work as expected. But, if the key does not exist, then no runtime error will be thrown (like how Python throws a KeyError in this case), and undefined behavior will occur. This is why its not recommended to use '[]', whereas dg does throw the runtime error, so it is safer.
+If the key that you are using exists in the dictionary, then using the '[]' operator will work as expected. But, if the key does not exist, then no runtime `KeyError` error will be thrown (like how Python throws a `KeyError` in this case), and undefined behavior will occur. This is why its not recommended to use '[]', whereas `dg` does throw the `KeyError`, just like Python.
 
 ## Deleting key-value pairs
 
@@ -84,6 +84,9 @@ These are the supported methods
 - `copy`
 
 The below sections explain the slight differences compared to Python.
+
+Note: you can only pass temporaries or use `mov()` with the `update`, and `setdefault` methods.
+
 
 ### get
 
