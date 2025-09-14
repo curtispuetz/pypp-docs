@@ -94,18 +94,24 @@ def pseudo_fn(my_list: list[str]):
 
 ## Accessing an element
 
-Same as Python
-```python
-def pseudo_fn(my_list: list[str]):
-    value: str = my_list[5]
-```
+Using the `[]` operator is supported, but will give undefined behavior if the index is out of range and does not support negative indices like Python.
 
-or, with negative numbers:
+If you want negative indices support and error handling similar to Python where a `IndexError` is thrown when the index is out of range, you can use the `lg` built-in function
+
 
 ```python
+from pypp_python import lg
+
+
 def pseudo_fn(my_list: list[str]):
-    value: str = my_list[-5]
+    a: str = my_list[5]  # undefined behavior if 5 is out of range, but is really fast
+
+    b: str = lg(my_list, 5)  # will throw `IndexError` if 5 is out of range
+
+    c: str = lg(my_list, -2)  # supports negative indices
 ```
+
+`lg` stands for 'list-get'
 
 ## Accessing multiple elements
 
