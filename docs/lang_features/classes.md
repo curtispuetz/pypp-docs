@@ -41,7 +41,7 @@ def pseudo_fn():
 
 ## Factory function pattern
 
-In Py++ you don't define a constructor for the class. If you want instantiation of objects with some other logic, you can use a factory function pattern. An example:
+In Py++, you don't define a constructor for the class. If you want instantiation of objects with some other logic, you can use a factory function pattern. An example:
 
 ```python
 def greeter_mrs_factory(name: str, is_doctor: bool) -> Greeter:
