@@ -1,4 +1,4 @@
-# With
+# File IO
 
 Like Python with statements, but only usage with `open()` is supported.
 
@@ -19,7 +19,11 @@ def pseudo_fn():
 
 `res_dir()` is a built-in function that gives us the path to the 'resources' project directory.
 
+Note: `with` statements are only supported in Py++ for usage with `open()`.
+
 ## Supported `open()` modes
+
+Like Python modes
 
 - `"r"`
 - `"w"`
@@ -27,3 +31,15 @@ def pseudo_fn():
 - `"r+"`
 - `"w+"`
 - `"a+"`
+
+## Supported file I/O methods
+
+Like Python methods
+
+- `read`
+- `readline`
+- `readlines`
+- `write`
+- `writelines`
+
+The methods can throw `RuntimeError`.
