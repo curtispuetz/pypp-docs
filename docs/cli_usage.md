@@ -1,6 +1,6 @@
 # CLI Usage
 
-The Py++ CLI can initialize Py++ projects, transpile your code to C++, and build and run the generated C++ CMake project (if you don't want to use the cmake commands directly).
+The Py++ CLI can initialize Py++ projects, transpile your code to C++, and build and run the generated C++ CMake project (if you don't want to use the CMake commands directly).
 
 ## Primary Workflow
 
@@ -24,7 +24,7 @@ It is also useful to format your code at the same time as transpiling, otherwise
 pypp do transpile format
 ```
 
-At this point you will have a CMake project in the `cpp` directory that you can use. You can do usual cmake commands to build your project. There is also a `pypp` command to help you build the cmake project if that works for your situation:
+At this point, you will have a CMake project in the `cpp` directory that you can use. You can do the usual CMake commands to build your project. There is also a `pypp` command to help you build the CMake project if that works for your situation:
 
 ```console
 pypp do build
@@ -46,7 +46,7 @@ pypp do transpile format build run -e main
 
 ## Other commands
 
-There is other `init` commands for initializing projects of the two types of Py++ external libraries, pure-libraries, and bridge-libraries.
+There are other `init` commands for initializing projects of the two types of Py++ external libraries, pure-libraries, and bridge-libraries.
 
 ```console
 pypp init_pure_lib
