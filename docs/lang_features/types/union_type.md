@@ -22,7 +22,7 @@ def pseudo_fn():
 
 ## Accessing the value
 
-First, you should check the values type with the `isinst` function, and then get the value with the `ug` function.
+First, you should check the value type with the `isinst` function, and then get the value with the `ug` function.
 
 ```python
 from pypp_python import Uni, ug, isinst, is_none
@@ -33,7 +33,7 @@ def int_float_union(u: Uni[int, float]):
         val: float = ug(u, float)
 ```
 
-For a Union with a possible 'None' type, there is a `is_none` function
+For a Union with a possible 'None' type, there is an `is_none` function
 
 ```python
 def optional_str_union(u: Uni[str, None]):
