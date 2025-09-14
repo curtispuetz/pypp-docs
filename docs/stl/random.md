@@ -1,6 +1,6 @@
 # Random
 
-Like Pythons random standard library. Limited at the moment.
+Like Python's random standard library. Limited at the moment.
 
 ## Usage
 
