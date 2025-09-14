@@ -2,9 +2,9 @@
 
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
-I came up with a set of rules that need to be followed where if you follow them then your code will run the same via the C++ executable and Python interpreter. If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we will be in a very good place. Right now none of these rules, when broken, throw transpiler errors.
+I came up with a set of rules that need to be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we will be in a very good place. Right now, none of these rules, when broken, throw transpiler errors.
 
-If I am missing any rules, I.e. there are other ways you can get code that runs different via C++ and Python, please let me know.
+If I am missing any rules, i.e. there are other ways you can get code that runs differently via C++ and Python, please let me know.
 
 ## Rules
 
@@ -13,16 +13,15 @@ If I am missing any rules, I.e. there are other ways you can get code that runs 
 - For a class data member that is pass-by-value, only pass temporaries or use `mov()` (similar to above)
 - After doing `mov(v)`, do not use `v`
 - Only use `mov(v)` if `v` is an owner and has no references
-- Do not end the lifetime of an owner if the owner has any alive references 
-- In a return-by-value function/method, do not return a variable whos lifetime does not end at the end of the function/method
+- Do not end the lifetime of an owner if the owner has any living references 
+- In a return-by-value function/method, do not return a variable whose lifetime does not end at the end of the function/method
 - When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref()`
-- When initializing list, set, dict, or tuple datastructures with some initial values, only pass temporaries or use `mov()` for the elements
+- When initializing list, set, dict, or tuple data structures with some initial values, only pass temporaries or use `mov()` for the elements
 
 
 ## Examples of each rule
-TODO: update the terminology used in these sections. Not 'original' anymore 'owner' now.
 
-### Only reassign a variable which is the original and has no references
+### Only reassign a variable which is an owner and has no references
 
 ```python
 from dataclasses import dataclass
@@ -67,7 +66,7 @@ if __name__ == "__main__":
     object_a2: auto = a_factory(my_list_1)  # X
 ```
 
-### For a class data member that uses `Valu()`, only pass temporaries or use `mov()` (similar to above)
+### For a class data member that is pass-by-value, only pass temporaries or use `mov()` (similar to above)
 
 ```python
 from pypp_python import Valu, mov, auto
@@ -106,7 +105,7 @@ if __name__ == "__main__":
     min_val: int = min(my_list_0)  # X
 ```
 
-### Only use `mov(v)` if `v` is the original and has no references
+### Only use `mov(v)` if `v` is an owner and has no references
 
 ```python
 from pypp_python import Valu, mov, auto
@@ -143,7 +142,7 @@ if __name__ == "__main__":
     object_a1: auto = class_a_factory(mov(my_list_2))  # X my_list_2 is the original, but it has a reference
 ```
 
-### Do not give access to memory to any code that might use it after it has been freed or has gone out of scope. (i.e. the obvious rule for manual memory management programming languages)
+### Do not end the lifetime of an owner if the owner has any living references 
 
 ```python
 from pypp_python import Valu, mov, auto
@@ -164,7 +163,7 @@ if __name__ == "__main__":
     object_a: auto = a_factory()
 ```
 
-### In a return-by-value function/method, do not return a variable whos lifetime does not end at the end of the function/method
+### In a return-by-value function/method, do not return a variable whose lifetime does not end at the end of the function/method
 
 ```python
 from pypp_python import auto, Valu
@@ -184,7 +183,7 @@ if __name__ == "__main__":
     my_list: list[int] = object_a.get_my_list()
 ```
 
-### When calling a return-by-reference function/method, the type of the variable you assign the result to must be wrapped in `Ref()`
+### When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref()`
 
 
 ```python
@@ -205,3 +204,7 @@ if __name__ == "__main__":
     my_list_1: Ref(list[int]) = object_a.get_my_list()  # OK
     my_list_2: list[int] = object_a.get_my_list()  # X
 ```
+
+### When initializing list, set, dict, or tuple data structures with some initial values, only pass temporaries or use `mov()` for the elements
+
+TODO
