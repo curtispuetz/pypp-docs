@@ -6,7 +6,7 @@ I assume the reader has a little knowledge of C++.
 
 ## Main files and Src files
 
-Python files that you put in the first level of the project 'python' directory are main files (i.e. python/my_main_file.py), and Python files that you put in the 'python/src' directory are src files (i.e. python/src/my_src_file.py).
+Python files that you put in the first level of the project `python` directory are main files (i.e. `python/my_main_file.py`), and Python files that you put in the `python/src` directory are src files (i.e. `python/src/my_src_file.py`).
 
 Main files must have a Python main block:
 
