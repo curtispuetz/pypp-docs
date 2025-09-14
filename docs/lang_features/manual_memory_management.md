@@ -2,7 +2,7 @@
 
 ## Owner Vs. Reference
 
-Py++ varaibles can either be an `owner` or a `reference to an owner`. If it is an owner, that means it is responsible for managing the lifetime of the data.
+Py++ variables can either be an `owner` or a `reference to an owner`. If it is an owner, that means it is responsible for managing the lifetime of the data.
 
 
 ```python
@@ -70,7 +70,7 @@ if __main__ == "__main__":
 
 ### For class data members
 
-For class data members it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is when it does not have any symbols.
+For class data members, it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is when it does not have any symbols.
 
 Like function parameters, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value, and every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
 
