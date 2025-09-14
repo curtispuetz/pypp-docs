@@ -32,9 +32,9 @@ int main() {
 }
 ```
 
-Therefore, for each main file in your project, cmake will generate an executable that you can run.
+Therefore, for each main file in your project, CMake will generate an executable that you can run.
 
-Src files on the other hand, should not have a main block. They are transpiled to a .h file, and in most cases a .cpp file as well.
+Src files, on the other hand, should not have a main block. They are transpiled to a .h file, and in most cases a .cpp file as well.
 
 ## Type hints
 
@@ -164,7 +164,7 @@ void union_example() {
 - You can see that the `Uni` type translates to `pypp::Uni`
     - `pypp::Uni` is a thin wrapper around `std::variant`
 - You can see that functions `isinst()` (i.e. isinstance), and `is_none()`, are used to check the type
-- You can see that `ug()` (i.e. union get), is used to get the actual value
+- You can see that `ug()` (i.e. union get) is used to get the actual value
 
 ### 3) Classes
 
@@ -216,6 +216,6 @@ pypp::PyStr Greeter::greet() {
 
 - To define a class in Py++, you must use the `@dataclass` annotation (except for interfaces, config classes, and custom exception types)
     - You can use `frozen` or `slots` options if you want
-        - if you use the `frozen` option, then the generated C++ struct will use `const` for the instance variables
+        - If you use the `frozen` option, then the generated C++ struct will use `const` for the instance variables
 - In Py++, you cannot put logic in a constructor
     - Instead, you can use the factory function pattern
