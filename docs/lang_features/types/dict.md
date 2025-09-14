@@ -47,21 +47,18 @@ def pseudo_fn(my_dict: dict[int, str]):
 
 ## Accessing a value
 
-Unfortunately, it is not recommended to use the `[]` operator to access a value. Instead, it is recommended to use the `dg` function:
+You can use the `[]` operator if you are OK with undefined behavior if the key does not exist. If you want an error handling experience similar to Python where a `KeyError` is thrown when the key does not exist, you can use the `dg` built-in unction:
 
 ```python
 from pypp_python import dg
 
 def pseudo_fn(d: dict[int, str]):
-    index: int = 5
-    value: str = dg(d, index)
+    a: str = dict[5]  # undefined behavior if key does not exist
+
+    b: str = dg(d, 5)  # will throw `KeyError` if key does not exist
 ```
 
 `dg` stands for 'dict-get'
-
-### Note about using `[]` operator
-
-If the key that you are using exists in the dictionary, then using the '[]' operator will work as expected. But, if the key does not exist, then no runtime `KeyError` error will be thrown (like how Python throws a `KeyError` in this case), and undefined behavior will occur. This is why it's not recommended to use '[]', whereas `dg` does throw the `KeyError`, just like Python.
 
 ## Deleting key-value pairs
 
@@ -103,7 +100,6 @@ The setdefault method must be used with a default value (in Python, it is option
 ```python
 def pseudo_fn(d: dict[int, str]):
     d.setdefault(10, "default value")
-
 ```
 
 ### keys, values, and items
@@ -118,7 +114,7 @@ def pseudo_fn(keys: KeysView[int]):
     pass
 ```
 
-They are meant to be used for iterations only. I.e.:
+They are meant to be used in for loops only. I.e.:
 
 ```python
 def pseudo_fn(d: dict[int, str]):
@@ -130,6 +126,20 @@ def pseudo_fn(d: dict[int, str]):
 
     for k, v in d.items():
         print(k, v)
+```
+#### Items
+
+`items()` can only be used exactly as shown in the above example. It must have two targets instead of one and it cannot be used with `enumerate()` or `zip()`. 
+
+```python
+def pseudo_fn(d: dict[int, str]):
+    # ❌ can't do this
+    for k_v_pair in d.items():
+        print(k_v_pair)
+    
+    # ❌ can't do this
+    for i, k_v_pair in enumerate(d.items()):
+        print(k_v_pair)
 ```
 
 ## Other operations
@@ -160,4 +170,4 @@ You can inline dictionaries as function arguments.
 
 ## Iteration support
 
-Same as Python, with the `items`, `keys`, and `values` methods.
+See [above](#keys-values-and-items)
