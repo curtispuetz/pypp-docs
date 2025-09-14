@@ -17,7 +17,7 @@ def pseudo_fn():
         print("text_file.txt file exists in resources dir")
 ```
 
-If you have a `text_file.txt` in your resources directory, then if you had this code and run it your file should be found. Make sure of the following so that your files are found correctly:
+If you have a `text_file.txt` in your resources directory, then if you had the above code and ran it, your file should be found. Make sure of the following so that your files are found correctly:
 
 - When running with the Python interpreter, your virtual environment is located under `project_root/python`
 - When running with the C++ generated executable, your **executable is under `project_root/cpp/build`**.
