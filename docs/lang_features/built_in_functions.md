@@ -62,7 +62,7 @@ Note: Any function which does not have to be imported or is imported from `pypp_
 - `reversed`
 - `zip`
 
-For usage of `range`, `enumerate`, `reversed`, and `zip`  see [for loop page](for_loops.md).
+For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](for_loops.md).
 
 `sorted` is not supported.
 
