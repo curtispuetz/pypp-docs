@@ -161,7 +161,7 @@ def pseudo_fn():
 
 What this does is call the .reserve() method on the std::vector in C++. This can improve efficiency a lot when creating large lists.
 
-Note: if you are running Py++ with the Python intepreter, list_reserve does nothing.
+Note: if you are running Py++ with the Python interpreter, list_reserve does nothing.
 
 ## Other operations
 
@@ -180,7 +180,7 @@ Supported with the same behavior as Python:
 
 ## Iteration support
 
-Same as python
+Same as Python
 
 ```python
 def pseudo_fn(colors: list[str]):
