@@ -19,7 +19,7 @@ def pseudo_fn():
     # copy another string
     d: str = c
 
-    # with single quoates
+    # with single quotes
     e: str = 'hello'
 
     # f-strings
@@ -79,7 +79,7 @@ Supported with the same behavior as Python:
 
 - `in`, `not in`
 - `+` (concatenation)
-- `*` (repitition)
+- `*` (repetition)
 - `==`, `!=`
 - `<`, `>`, `<=`, `>=`
 - `len()`
@@ -110,7 +110,7 @@ Same as Python, but some things are not supported:
 
 Same as Python (i.e. `r"this \n is a raw \t string"`).
 
-## Tripled quoted strings
+## Triple-quoted strings
 
 Same as Python 
 
