@@ -1,6 +1,6 @@
 # Tuple
 
-Similar to Python tuples, but you have to individually define the type for each element and cannot iterate over them.
+Similar to Python tuples, but you have to define the type for each element and cannot iterate over them.
 
 These are meant to be containers for multiple values, useful for returning multiple values from a function/method.
 
