@@ -18,7 +18,7 @@ def pseudo_fn():
     # with some values
     short_set: set[int] = {1, 2, 3, 4}
 
-    # from a different datastructure (list, dict, or str)
+    # from a different data structure (list, dict, or str)
     set_of_ints: set[int] = set(list_of_ints)
 
     # copying another set
