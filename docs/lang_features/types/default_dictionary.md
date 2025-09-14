@@ -42,6 +42,6 @@ Supported with the same behavior as Python:
 
 - `dict()`
 
-Also supported is all the ones mentioned in [dictionaries](dict.md#other-operations).
+Also supported are all the ones mentioned in [dictionaries](dict.md#other-operations).
 
-Note: for comparisons operators (`==` and `!=`) between a dict and a defaultdict, the defaultdict must be on the left side (orelse C++ will give a compilation error).
+Note: for comparison operators (i.e. `==` and `!=`) between a dict and a defaultdict, the defaultdict must be on the left side (otherwise C++ will give a compilation error).
