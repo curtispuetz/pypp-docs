@@ -1,6 +1,6 @@
 # Interfaces
 
-Like Python interfaces with abc module, but you can only specify required methods (not properties also).
+Like Python interfaces with the abc module, but you can only specify required methods (`properties` are not supported).
 
 ## Declaration
 
@@ -17,7 +17,7 @@ class MyInterface(ABC):
         pass
 ```
 
-Note: whatever you put inside the abstractmethod bodies is ignored, so therefore it is best to put `pass`.
+Note: whatever you put inside the `abstractmethod` bodies is ignored, so it is best to put `pass`.
 
 ## Usage
 
