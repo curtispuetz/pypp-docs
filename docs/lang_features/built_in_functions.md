@@ -66,7 +66,7 @@ For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](fo
 
 `sorted` is not supported.
 
-## List initializers
+## List initializers and reserve
 
 - `int_list`
 - `float_list`
@@ -77,6 +77,7 @@ For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](fo
 
 - `dg`
 - `tg`
+- `lg`
 - `ug`
 
 ## Union operators

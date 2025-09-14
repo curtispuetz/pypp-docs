@@ -30,7 +30,7 @@ At this point, you will have a CMake project in the `cpp` directory that you can
 pypp do build
 ```
 
-This command just runs `cmake -S . -B build` and `cmake --build build --config Release` together.
+This command just runs `cmake -S . -B build -DCMAKE_BUILD_TYPE=Release` and `cmake --build build --config Release` together.
 
 There is also a `pypp` command to help you run your generated executable (the executable is called `main` in this example):
 
