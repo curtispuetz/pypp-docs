@@ -53,7 +53,7 @@ Note: Any function which does not have to be imported or is imported from `pypp_
 - `len`
 - `open`
 
-`open` can only be used with a [`with` statement](with.md)
+`open` can only be used with a (see [file I/O](file_io.md))
 
 ## Iterating and sorting
 

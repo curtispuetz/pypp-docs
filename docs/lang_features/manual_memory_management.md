@@ -49,7 +49,7 @@ if __main__ == "__main__":
 
 Pass-by-reference is like in C++ when a function parameter has the `&` symbol, and pass-by-value is when it does not have any symbols.
 
-The Py++ [primitive types](primitive_types.md) will always be pass-by-value (you cannot change that). Every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
+The Py++ [primitive types](types/primitive_types.md) will always be pass-by-value (you cannot change that). Every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
 
 ```python
 from pypp_python import Valu
@@ -72,7 +72,7 @@ if __main__ == "__main__":
 
 For class data members it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is when it does not have any symbols.
 
-Like function parameters, the Py++ [primitive types](primitive_types.md) will always be pass-by-value, and every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
+Like function parameters, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value, and every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
 
 ```python
 from pypp_python import Valu
@@ -99,7 +99,7 @@ if __main__ == "__main__":
 
 For functions and methods, return-by-value is like in C++ when the return type has no symbols, and return-by-reference is like when it has the `&` symbol.
 
-[Primitive types](primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref()`.
+[Primitive types](types/primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref()`.
 
 ```python
 from pypp_python import Ref, Valu

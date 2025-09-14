@@ -81,7 +81,7 @@ void pseudo_fn() {
 
 ### List Comprehensions
 
-Are supported in Py++. See [comprehensions](comprehensions.md).
+Are supported in Py++. See [comprehensions](../comprehensions.md).
 
 
 ## Assigning an element
