@@ -1,6 +1,6 @@
 # Os
 
-Like Pythons os standard library. Limited at the moment.
+Like Python's os standard library. Limited at the moment.
 
 ## Usage
 
@@ -20,7 +20,7 @@ def pseudo_fn():
 - `rmdir`
 - `rename`
 
-note: certain arguments for these functions may not be supported.
+Note: certain arguments for these functions may not be supported.
 
 ## Supported os.path functions
 
