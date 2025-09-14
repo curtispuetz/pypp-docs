@@ -71,6 +71,26 @@ pypp delete_timestamps
 - `do_pure_lib`
 - `delete_timestamps`
 
-## Usage notes
+## Other usage tips
 
 CLI commands `do`, `do_pure_lib`, and `delete_timestamps` must be run from the Py++ project root (i.e. where there exists a `pypp_files/proj_info.json` file).
+
+If you want a file or folder to be ignored by the transpiler then you can specify them in the `pypp_files/proj_info.json` file in the `ignore_src_files` and `ignore_main_files` fields, which support wildcard matching. I.e.:
+
+```json
+{
+    "cpp_dir_is_dirty": false,
+    "ignore_src_files": ["src_file.py", "wip_dir/**"],
+    "ignore_main_files": ["main.py"]
+}
+```
+
+## Troubleshooting
+
+If you are experiencing an unexpected issue, try this:
+
+- Delete the entire `cpp` directory
+- Delete the `pypp_files/file_timestamps.json` file
+- In `pypp_files/proj_info.json`, set `cpp_dir_is_dirty` to `true`
+
+Then, try to transpile and build again.
