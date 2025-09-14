@@ -1,9 +1,15 @@
+# Required
 version: 2
+
+# Set the version of Python and other tools you might need
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.13"
 
 mkdocs:
   configuration: mkdocs.yml
 
 python:
-  version: "3.13"
   install:
-    - requirements: requirements.txt
+  - requirements: requirements.txt
