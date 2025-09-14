@@ -1,6 +1,6 @@
 # Slices
 
-Like Pythons slices.
+Like Python's slices.
 
 They are used to access multiple elements of lists and strings. However, slice assignment is not supported.
 
