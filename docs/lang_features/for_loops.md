@@ -90,9 +90,8 @@ void pseudo_fn(pypp::PyList<int> &integers,
 ## Enumerate, Zip, and Reversed
 
 - Enumerate, zip, and reversed can only be used in for loops (i.e. you cannot assign the result of calling one of them to a variable)
-- Enumerate, zip, and reversed can be about 2.5, 5, and 10 times slower, respectively, than using `range`
-    - In many practical cases, there is no noticeable performance difference
 - The Python 'start' argument for enumerate is not supported
+- I have benchmarked usage of these against typical C++ for loops involing a `list` (or `std::vector`) of integers and found no noticable performance difference ([source code](https://github.com/curtispuetz/pypp-cpp-dev/blob/67ec011dbd407d8ff195f461bf85f3f9e503a229/benchmarks/loops.cpp))
 
 ## Range
 
@@ -104,8 +103,3 @@ def pseudo_fn():
 ```
 
 However, do not try to access the range attributes (start, stop, step), because they are not supported.
-
-# Other notes about usage
-
-Except for when using `range()`, the reason why you cannot modify the target of the for loop is that in the generated C++, the targets are const-qualified
-
