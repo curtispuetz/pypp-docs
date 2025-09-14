@@ -2,7 +2,7 @@
 
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
-I came up with a set of rules that need to be followed where if you follow them then your code will run the same via the C++ executable and Python interpreter. If we get to a point where the Py++ transpiler throws errors for each of these rules (when broken), then we will be in a very good place. Right now none of these rules (when broken) throw transpiler errors.
+I came up with a set of rules that need to be followed where if you follow them then your code will run the same via the C++ executable and Python interpreter. If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we will be in a very good place. Right now none of these rules, when broken, throw transpiler errors.
 
 If I am missing any rules, I.e. there are other ways you can get code that runs different via C++ and Python, please let me know.
 
@@ -16,6 +16,7 @@ If I am missing any rules, I.e. there are other ways you can get code that runs 
 - Do not end the lifetime of an owner if the owner has any alive references 
 - In a return-by-value function/method, do not return a variable whos lifetime does not end at the end of the function/method
 - When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref()`
+- When initializing list, set, dict, or tuple datastructures with some initial values, only pass temporaries or use `mov()` for the elements
 
 
 ## Examples of each rule

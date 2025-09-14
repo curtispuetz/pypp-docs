@@ -1,14 +1,17 @@
 # Built-in functions
 
-Similar to Python
+Similar to Python built-in functions. Most of the common Python built-in functions are supported.
+
+Note: Any function which does not have to be imported or is imported from `pypp_python` is referred to as a "built-in function".
 
 ## Type conversion
 
+### Data structures
 - `list`
 - `set`
 - `dict`
-- `str`
-- `bool`
+
+### Numbers
 - `int`
 - `float`
 - `to_float32`
@@ -23,31 +26,21 @@ Similar to Python
 
 `int()`, `float()`, and `to_float32()` can throw ValueError.
 
-### Usage
+### Other
 
-To use the later ones, they can be imported
+- `str`
+- `bool`
 
-```python
-from pypp_python import (
-    to_float32,
-    to_int8_t,
-    to_int16_t,
-    to_int32_t,
-    to_int64_t,
-    to_uint8_t,
-    to_uint16_t,
-    to_uint32_t,
-    to_uint64_t,
-)
-```
+### `str` operators
 
-Even though we have to import them, we will still call them built-in functions.
-
+- `to_std_string`
+- `to_c_string`
 
 ## Mathematical
 
 - `max`
 - `min`
+- `int_pow` (** operator for integers)
 
 `abs`, `sum`, and `round` are not supported. I'll likely add them soon.
 
@@ -72,3 +65,31 @@ Even though we have to import them, we will still call them built-in functions.
 For usage of `range`, `enumerate`, `reversed`, and `zip`  see [for loop page](for_loops.md).
 
 `sorted` is not supported.
+
+## List initializers
+
+- `int_list`
+- `float_list`
+- `str_list`
+- `list_reserve`
+
+## 'Get' functions
+
+- `dg`
+- `tg`
+- `ug`
+
+## Union operators
+
+- `isinst`
+- `is_none`
+
+## Ownership utilities
+
+- `mov`
+- `Ref`
+- `Valu`
+
+## Resources
+
+- `res_dir`

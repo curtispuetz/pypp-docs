@@ -14,12 +14,16 @@ from pypp_python import auto
 def pseudo_fn():
     # empty
     empty_set: auto = set[int]()
+
     # with some values
     short_set: set[int] = {1, 2, 3, 4}
+
     # from a different datastructure (list, dict, or str)
     set_of_ints: set[int] = set(list_of_ints)
+
     # copying another set
     set_copy: set[int] = short_set.copy()
+
     # copying another set option 2
     set_copy_2: set[int] = set(short_set)
 ```
@@ -53,6 +57,9 @@ The methods are listed below and documented in the Python docs.
 - `difference_update`
 - `symmetric_difference_update`
 - `copy`
+
+Note: you can only pass temporaries or use `mov()` with the `add` method.
+
 
 ## Other operations
 
