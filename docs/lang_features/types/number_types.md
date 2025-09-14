@@ -4,7 +4,7 @@
 - `int`
 - `float`
 
-`float` is transalted to a `double` in the C++ code.
+`float` is translated to a `double` in the C++ code.
 
 ## Others
 
