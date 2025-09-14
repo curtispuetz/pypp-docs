@@ -10,14 +10,14 @@ This is the case for the following:
 - classes. I.e.:
     - normal classes
     - config classes
-    - custom expections
+    - custom exceptions
     - interfaces
 - variables (defined at the highest level of your Python module only)
 - type aliases (defined at the highest level of your Python module only)
 
 ## What is this useful for?
 
-If you define something as private then you don't have to worry about namespace conflicts with the rest of your codebase. Additionally, it could make C++ compilation slightly faster.
+If you define something as private, then you don't have to worry about namespace conflicts with the rest of your codebase. Additionally, it could make C++ compilation slightly faster.
 
 ## How does the Py++ transpiler do this?
 
