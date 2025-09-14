@@ -61,7 +61,7 @@ def pseudo_fn(d: dict[int, str]):
 
 ### Note about using `[]` operator
 
-If the key that you are using exists in the dictionary, then using the '[]' operator will work as expected. But, if the key does not exist, then no runtime `KeyError` error will be thrown (like how Python throws a `KeyError` in this case), and undefined behavior will occur. This is why its not recommended to use '[]', whereas `dg` does throw the `KeyError`, just like Python.
+If the key that you are using exists in the dictionary, then using the '[]' operator will work as expected. But, if the key does not exist, then no runtime `KeyError` error will be thrown (like how Python throws a `KeyError` in this case), and undefined behavior will occur. This is why it's not recommended to use '[]', whereas `dg` does throw the `KeyError`, just like Python.
 
 ## Deleting key-value pairs
 
@@ -69,7 +69,7 @@ Use the pop method
 
 ## Methods
 
-Most of the Python dict methods are supported in Py++, and for some of them there are some slight differences compared to the Python methods.
+Most of the Python dict methods are supported in Py++, and for some of them, there are some slight differences compared to the Python methods.
 
 These are the supported methods
 
@@ -83,14 +83,13 @@ These are the supported methods
 - `clear`
 - `copy`
 
-The below sections explain the slight differences compared to Python.
+The following sections explain the slight differences compared to Python.
 
-Note: you can only pass temporaries or use `mov()` with the `update`, and `setdefault` methods.
-
+Note: you can only pass temporaries or use `mov()` with the `update` and `setdefault` methods.
 
 ### get
 
-The get method must be used with a default value (in Python it is optional).
+The get method must be used with a default value (in Python, it is optional).
 
 ```python
 def pseudo_fn(d: dict[int, str]):
@@ -99,7 +98,7 @@ def pseudo_fn(d: dict[int, str]):
 
 ### setdefault
 
-The setdefault method must be used with a default value (in Python it is optional).
+The setdefault method must be used with a default value (in Python, it is optional).
 
 ```python
 def pseudo_fn(d: dict[int, str]):
