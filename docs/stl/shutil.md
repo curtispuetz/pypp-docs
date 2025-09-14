@@ -1,6 +1,6 @@
 # Shutil
 
-Like Pythons shutil standard library. Limited at the moment.
+Like Python's shutil standard library. Limited at the moment.
 
 ## Usage
 
