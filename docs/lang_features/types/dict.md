@@ -47,15 +47,17 @@ def pseudo_fn(my_dict: dict[int, str]):
 
 ## Accessing a value
 
-You can use the `[]` operator if you are OK with undefined behavior if the key does not exist. If you want an error handling experience similar to Python where a `KeyError` is thrown when the key does not exist, you can use the `dg` built-in unction:
+Using the `[]` operator is supported, but will give undefined behavior if the key is not in the dictionary. 
+
+If you want an error handling similar to Python where a `KeyError` is thrown when the key is not in the dictionary, you can use the `dg` built-in function:
 
 ```python
 from pypp_python import dg
 
 def pseudo_fn(d: dict[int, str]):
-    a: str = dict[5]  # undefined behavior if key does not exist
+    a: str = dict[5]  # undefined behavior if 5 is not in the dictionary
 
-    b: str = dg(d, 5)  # will throw `KeyError` if key does not exist
+    b: str = dg(d, 5)  # will throw `KeyError` if 5 is not in the dictionary
 ```
 
 `dg` stands for 'dict-get'
