@@ -6,7 +6,7 @@ The defaults and type parameters features will be coming soon.
 
 ## Declaration
 
-This was mentioned elsewhere, but mentioning it again:
+This was mentioned elsewhere, but again:
 - Function parameters that are [primitive types](types/primitive_types.md) are always pass-by-value. 
 - Function parameters that are non-primitive types are pass-by-reference by default, and can be made pass-by-value with `Valu()`.
 - Functions are return-by-value by default, and can be made return-by-reference with `Ref()` for non-primtive types
@@ -68,7 +68,7 @@ def pseudo_fn():
 
 ## Void functions
 
-If you want to define a function which does not return anything, you do not specify any return type. In these types of function, you can use an empty `return` statement if you want to exit early.
+If you want to define a function which does not return anything, you do not specify any return type. In these types of functions, you can use an empty `return` statement if you want to exit early.
 
 ```python
 def a_void_fn():
