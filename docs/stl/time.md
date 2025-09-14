@@ -1,6 +1,6 @@
 # Times
 
-The Py++ time standard library is a little more different, but still similar, to Pythons time standard library. Also limited at the moment.
+The Py++ time standard library is a little different, but still similar, to Python's time standard library. Also limited at the moment.
 
 ## Usage
 
@@ -22,7 +22,7 @@ def pseudo_fn():
     print(f"performance time elapsed time: {d}")
 ```
 
-For the `start()` and `perf_counter_start()` functions, you must specify the type as `auto` and then you put pass those variables only to `end()` and `perf_counter_end()` respectively.
+For the `start()` and `perf_counter_start()` functions, you must specify the type as `auto`, and then you pass those variables only to `end()` and `perf_counter_end()` respectively.
 
 ## Supported functions
 
