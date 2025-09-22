@@ -5,7 +5,7 @@ The pass keyword can be used, the same as Python
 ## Usage
 
 ```python
-from dataclasses import dataclass
+from pypp_python import dataclass
 
 
 def pseudo_fn():

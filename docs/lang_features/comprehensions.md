@@ -2,7 +2,6 @@
 
 Like Python list, set, and dictionary comprehensions.
 
-
 You can not inline comprehensions (i.e. you can only assign them to a variable), and multiple loops and ifs in the comprehensions are not supported.
 
 Comprehensions are one of the few expressions in Py++ that don't map 1:1 to an expression in the generated C++ code (this is why you can't inline them). Below shows how to use comprehensions for lists, sets, and dictionaries, and their corresponding generated C++ code.

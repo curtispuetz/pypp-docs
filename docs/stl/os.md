@@ -5,7 +5,7 @@ Like Python's os standard library. Limited at the moment.
 ## Usage
 
 ```python
-import os
+from pypp_python import os
 
 
 def pseudo_fn():

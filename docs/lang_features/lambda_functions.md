@@ -7,7 +7,7 @@ In Py++, functions cannot be defined anywhere but the module level. However, lam
 ## Declaration
 
 ```python
-from typing import Callable
+from pypp_python import Callable
 
 
 def pseudo_fn():
@@ -17,7 +17,7 @@ def pseudo_fn():
 ## Usage
 
 ```python
-from typing import Callable
+from pypp_python import Callable
 
 
 def use_lambda(fn: Callable[[int, int], str]):

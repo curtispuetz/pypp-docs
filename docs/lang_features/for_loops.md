@@ -1,6 +1,6 @@
 # For loops
 
-Like Python for loops, but you cannot modify the target unless using `range()`.
+Like Python for loops, but you cannot modify the target.
 
 ## Usage
 

@@ -1,12 +1,11 @@
 # File IO
 
-Like Python with statements, but only usage with `open()` is supported.
+Like Python file I/O with `open()`.
 
 ## Usage
 
 ```python
-import os
-from pypp_python import res_dir
+from pypp_python import os, res_dir
 
 
 def pseudo_fn():

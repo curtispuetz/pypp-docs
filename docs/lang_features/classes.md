@@ -5,8 +5,7 @@ Like Python dataclasses, but magic methods are not supported today.
 ## Declaration
 
 ```python
-from dataclasses import dataclass
-from pypp_python import Valu
+from pypp_python import Valu, dataclass
 
 
 @dataclass
