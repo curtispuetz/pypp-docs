@@ -5,7 +5,7 @@ Like Python's math standard library. Limited at the moment.
 ## Usage
 
 ```python
-import math
+from pypp_python import math
 
 
 def pseudo_fn():

@@ -8,8 +8,7 @@ Only the things that are different from [dictionaries](dict.md) are mentioned on
 Similar to Python:
 
 ```python
-from collections import defaultdict
-from pypp_python import auto
+from pypp_python import auto, defaultdict
 
 
 def pseudo_fn():

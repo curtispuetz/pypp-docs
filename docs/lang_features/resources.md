@@ -1,13 +1,12 @@
 # Resources
 
-There is a built-in function `res_dir()` which returns a string for the path to the project resources dir. The resources dir is one of the 4 directories you should have in the root directory of your Py++ project. If you ran the `pypp init` script to create your project, then you will already have it.
+There is a built-in function `res_dir()` which returns a string for the path to the project resources dir. The resources dir located at `.pypp/resources`.
 
 
 ## Usage
 
 ```python
-from pypp_python import res_dir
-import os
+from pypp_python import os, res_dir
 
 
 def pseudo_fn():
@@ -19,5 +18,5 @@ def pseudo_fn():
 
 If you have a `text_file.txt` in your resources directory, then if you had the above code and ran it, your file should be found. Make sure of the following so that your files are found correctly:
 
-- When running with the Python interpreter, your virtual environment is located under `project_root/python`
-- When running with the C++ generated executable, your **executable is under `project_root/cpp/build`**.
+- When running with the Python interpreter, your virtual environment is located at the top level of your project (i.e. where the `.pypp` directory is)
+- When running with the C++ generated executable, your **executable is under `.pypp/cpp/build`**.

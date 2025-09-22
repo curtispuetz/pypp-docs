@@ -5,7 +5,7 @@ Like Python's shutil standard library. Limited at the moment.
 ## Usage
 
 ```python
-import os
+from pypp_python import shutil
 
 
 def pseudo_fn():

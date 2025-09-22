@@ -5,7 +5,7 @@ Like Python interfaces with the abc module, but you can only specify required me
 ## Declaration
 
 ```python
-from abc import ABC, abstractmethod
+from pypp_python import ABC, abstractmethod
 
 class MyInterface(ABC):
     @abstractmethod
@@ -24,7 +24,7 @@ Note: whatever you put inside the `abstractmethod` bodies is ignored, so it is b
 Must implement all methods from the interface
 
 ```python
-from dataclasses import dataclass
+from pypp_python import dataclass
 
 
 @dataclass

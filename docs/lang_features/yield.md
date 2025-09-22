@@ -7,7 +7,7 @@ Like Pythons `yield` and `yield from` keywords.
 Generator functions must use `yield` or `yield from` and return the `Iterator` type.
 
 ```python
-from typing import Iterator
+from pypp_python import Iterator
 
 
 def yield_123() -> Iterator[int]:

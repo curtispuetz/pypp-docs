@@ -4,10 +4,11 @@
 
 Py++ variables can either be an `owner` or a `reference to an owner`. If it is an owner, that means it is responsible for managing the lifetime of the data.
 
+The below code illustrates when a variable is an `owner` when when it is a `reference to an owner`. The `Ref`, `Valu`, and `mov` keywords will be explained in later sections on this page.
+
 
 ```python
-from pypp_python import Ref, Valu, mov
-from dataclasses import dataclass
+from pypp_python import Ref, Valu, mov, dataclass
 
 
 @dataclass
@@ -47,9 +48,9 @@ if __main__ == "__main__":
 
 ### For function parameters
 
-Pass-by-reference is like in C++ when a function parameter has the `&` symbol, and pass-by-value is when it does not have any symbols.
+Pass-by-reference is like in C++ when a function parameter has the `&` symbol, and pass-by-value is like when it does not have any symbols.
 
-The Py++ [primitive types](types/primitive_types.md) will always be pass-by-value (you cannot change that). Every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
+In Py++, parameters are pass-by-reference by default, and can be made pass-by-value with `Valu()`. However, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value (you cannot change that). 
 
 ```python
 from pypp_python import Valu
@@ -70,13 +71,12 @@ if __main__ == "__main__":
 
 ### For class data members
 
-For class data members, it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is when it does not have any symbols.
+For class data members, it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is like when it does not have any symbols.
 
-Like function parameters, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value, and every other type is pass-by-reference by default, and can be made pass-by-value with `Valu()`.
+Like function parameters, class data memebers are pass-by-reference by default, and can be made pass-by-value with `Valu()`. However, again like function parameters, the [primitive types](types/primitive_types.md) will always be pass-by-value.
 
 ```python
-from pypp_python import Valu
-from dataclasses import dataclass
+from pypp_python import Valu, dataclass
 
 
 @dataclass
@@ -99,12 +99,10 @@ if __main__ == "__main__":
 
 For functions and methods, return-by-value is like in C++ when the return type has no symbols, and return-by-reference is like when it has the `&` symbol.
 
-[Primitive types](types/primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref()`.
+In Py++, [Primitive types](types/primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref()`.
 
 ```python
-from pypp_python import Ref, Valu
-from dataclasses import dataclass
-
+from pypp_python import Ref, Valu, dataclass
 
 
 # return-by-value
@@ -126,7 +124,7 @@ if __main__ == "__main__":
 
     a: ClassA = ClassA(my_list)
 
-    my_list_ref = a.get_list_member()
+    my_list_ref: Ref(list[int]) = a.get_list_member()
 ```
 
 ## Using references to an owner
@@ -135,7 +133,7 @@ In Py++, if you have references to an owner, you are responsible for ensuring th
 
 ## Using pass-by-value
 
-When working with a function parameter or class data member that is pass-by-value, it is recommended that you only pass a temporary argument or pass using `mov()`. In fact, in a later Py++ version, it might become a transpilation error if you try to pass something else.
+When working with a function parameter or class data member that is pass-by-value, it is recommended that you only pass a temporary argument or pass using `mov()`. In fact, in a later Py++ version, it might result in a transpiler error if you try to pass something else.
 
 I'll show now what a temporary is and what `mov()` is.
 
@@ -144,8 +142,7 @@ I'll show now what a temporary is and what `mov()` is.
 A temporary is an object created as a result of an expression but is not explicitly named.
 
 ```python
-from pypp_python import Valu
-from dataclasses import dataclass
+from pypp_python import Valu, dataclass
 
 
 @dataclass
@@ -164,8 +161,7 @@ if __main__ == "__main__":
 Note: after calling `mov(v)`, you should not use `v` anymore (just like in C++).
 
 ```python
-from pypp_python import Valu, mov
-from dataclasses import dataclass
+from pypp_python import Valu, mov, dataclass
 
 
 @dataclass

@@ -4,26 +4,39 @@ This page is an introduction to writing Py++ code.
 
 I assume the reader has a little knowledge of C++.
 
-## Main files and Src files
+## Project structure
 
-Python files that you put in the first level of the project `python` directory are main files (i.e. `python/my_main_file.py`), and Python files that you put in the `python/src` directory are src files (i.e. `python/src/my_src_file.py`).
+Your project is just like a Python project except it has an extra directory named `.pypp`. This directory contains metadata and configuration for your Py++ project and the `.pypp/cpp` directory is also where Py++ generates the C++ code to.
 
-Main files must have a Python main block:
+So, you can have `.py` files whereever you want in your project directory and use `from ... import ...` statements to import code from other files, just like in Python.
+
+## Main files and source files
+
+If your `.py` file has a Python main block (i.e. `if __name__ == "__main__":`) as the last statement of the file, then it is considered a 'main file'. Every other file is considered a 'source file'.
+
+Each main file that you have in your project will be transpiled to a .cpp file that has a main function. Furthermore, for each main file in your project, the Py++ transpiler will add an executable to the generated CMakeLists.txt file. Therefore, for each main file in your project, CMake will generate an executable that you can run.
+
+Source files on the other hand are transpiled to a `.h` file, and in most cases, a `.cpp` file as well.
+
+### Main file hello world example
+Lets show a main file example and the C++ code it transpiles to.
 
 ```python
 if __name__ == "__main__":
-    # Your code goes here
+    print("Hello, World!")
 ```
 
-because each main file is transpiled to a .cpp file that has a main function:
+This will transpile to
 
 ```cpp
 #include "cstdlib"
 #include "pypp_util/main_error_handler.h"
+#include "pypp_util/print.h"
+#include "py_str.h"
 
 int main() {
     try {
-        // Your code, transpiled
+        pypp::print(pypp::PyStr("Hello, World!"))
         return 0;
     } catch (...) {
         pypp::handle_fatal_exception();
@@ -32,17 +45,13 @@ int main() {
 }
 ```
 
-Therefore, for each main file in your project, CMake will generate an executable that you can run.
-
-Src files, on the other hand, should not have a main block. They are transpiled to a .h file, and in most cases a .cpp file as well.
-
 ## Type hints
 
 You must use Python-style type hints everywhere. I.e. for variable definitions, function parameters, class data members, and return types.
 
 ## Memory management
 
-At this point, you should read the page on [memory management](lang_features/manual_memory_management.md). Then, if you want, come back and look at the examples below, which show how the Py++ transpiler works to translate your code to C++.
+At this point, you should read the page on [memory management](lang_features/manual_memory_management.md). Then, I invite you to come back and look at the examples below, which shows some common Py++ code and how the Py++ transpiler translates this code to C++.
 
 ## Examples
 
@@ -52,7 +61,7 @@ You will see that generally in Py++ each statement/expression translates 1-to-1 
 
 ### 1) A function
 
-If you add the following function to a Py++ src file
+If you add the following function to a Py++ source file
 
 ```python
 # list_adder.py
@@ -102,13 +111,13 @@ pypp::PyList<int> list_add(pypp::PyList<int> &a, pypp::PyList<int> &b,
     - `pypp::PyList` and `pypp::PyStr` are thin wrappers around `std::vector` and `std::string` respectively
     - Another note: Not shown in this example, but there is also `pypp::PyDict` and `pypp::PySet`, for the Py++ `dict` and `set` types, which thinly wrap `std::unordered_map` and `std::unordered_set`, respectively
 - You can see that the C++ code is wrapped in a `me` namespace
-    - All Py++ src files you write are translated to C++ files wrapped in a `me` namespace
+    - All Py++ source files you write are translated to C++ files wrapped in a `me` namespace
 
 ### 2) Union and Optional types
 
 If you are used to using Python's `isinstance()` function to check the type of an object, you can do something very similar in Py++ with `isinst()`.
 
-If you add the following function to a Py++ src file
+If you add the following function to a Py++ source file
 
 ```python
 # union_example.py
@@ -163,16 +172,16 @@ void union_example() {
 
 - You can see that the `Uni` type translates to `pypp::Uni`
     - `pypp::Uni` is a thin wrapper around `std::variant`
-- You can see that functions `isinst()` (i.e. isinstance), and `is_none()`, are used to check the type
+- You can see that functions `isinst()` (i.e. `isinstance()`), and `is_none()`, are used to check the type
 - You can see that `ug()` (i.e. union get) is used to get the actual value
 
 ### 3) Classes
 
-If you add the following class to a Py++ src file
+If you add the following class to a Py++ source file
 
 ```python
 # greeter.py
-from dataclasses import dataclass
+from pypp_python import dataclass
 
 
 @dataclass
@@ -215,7 +224,5 @@ pypp::PyStr Greeter::greet() {
 ```
 
 - To define a class in Py++, you must use the `@dataclass` annotation (except for interfaces, config classes, and custom exception types)
-    - You can use `frozen` or `slots` options if you want
-        - If you use the `frozen` option, then the generated C++ struct will use `const` for the instance variables
 - In Py++, you cannot put logic in a constructor
     - Instead, you can use the factory function pattern

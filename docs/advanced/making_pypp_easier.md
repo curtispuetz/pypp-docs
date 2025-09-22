@@ -1,8 +1,10 @@
-# Solving undefined behavior
+# Making Py++ easier and reducing undefined behavior
 
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
-I came up with a set of rules that can be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we will be in a very good place. Right now, none of these rules, when broken, throw transpiler errors.
+I came up with a set of rules that can be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. For that reason, if you follow these rules, then I am thinking you can reason about your code as if it is Python code, which should make Py++ easier to use. 
+
+If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we might be able to say the code will always run the same via C++ and Python. Right now, none of these rules, when broken, throw transpiler errors.
 
 If I am missing any rules, i.e. there are other ways you can get code that runs differently via C++ and Python, please let me know.
 
@@ -36,8 +38,8 @@ if __name__ == "__main__":
     my_list: list[int] = [1, 2, 3]
     my_list = [2, 3, 4]  # OK
     object_a: ClassA = ClassA(my_list)
-    object_a.my_list = [4, 5, 6]  # X it is not the original
-    my_list = [7, 8, 9]  # X it is the original, but it has a reference
+    object_a.my_list = [4, 5, 6]  # ❌ it is not the original
+    my_list = [7, 8, 9]  # ❌ it is the original, but it has a reference
 ```
 
 ### For a function/method parameter that is pass-by-value, only pass temporaries or use `mov()`
@@ -63,7 +65,7 @@ if __name__ == "__main__":
     object_a1: auto = a_factory(mov(my_list_0))  # OK
 
     my_list_1: list[int] = [1, 2, 3]
-    object_a2: auto = a_factory(my_list_1)  # X
+    object_a2: auto = a_factory(my_list_1)  # ❌
 ```
 
 ### For a class data member that is pass-by-value, only pass temporaries or use `mov()` (similar to above)
@@ -84,7 +86,7 @@ if __name__ == "__main__":
     object_a1: auto = ClassA(mov(my_list_0))  # OK
 
     my_list_1: list[int] = [1, 2, 3]
-    object_a2: auto = ClassA(my_list_1)  # X
+    object_a2: auto = ClassA(my_list_1)  # ❌
 ```
 
 ### After doing `mov(v)`, do not use `v`
@@ -102,7 +104,7 @@ if __name__ == "__main__":
     my_list_0: list[int] = [1, 2, 3]
     object_a1: auto = ClassA(mov(my_list_0))
 
-    min_val: int = min(my_list_0)  # X
+    min_val: int = min(my_list_0)  # ❌
 ```
 
 ### Only use `mov(v)` if `v` is an owner and has no references
@@ -125,7 +127,7 @@ class ClassB:
     my_list: list[int]
 
     def class_a_factory() -> ClassA:
-        return ClassA(mov(self.my_list))  # X self.my_list is a reference
+        return ClassA(mov(self.my_list))  # ❌ self.my_list is a reference
 
 
 if __name__ == "__main__":
@@ -135,11 +137,11 @@ if __name__ == "__main__":
     my_list_1: list[int] = [1, 2, 3]
     my_list_ref: Ref(list[int]) = my_list_1
 
-    object_a0: auto = class_a_factory(mov(my_list_ref))  # X my_list_ref is a reference
+    object_a0: auto = class_a_factory(mov(my_list_ref))  # ❌ my_list_ref is a reference
 
     my_list_2: list[int] = [1, 2, 3]
     my_list_2_ref: Ref(list[int]) = my_list_2
-    object_a1: auto = class_a_factory(mov(my_list_2))  # X my_list_2 is the original, but it has a reference
+    object_a1: auto = class_a_factory(mov(my_list_2))  # ❌ my_list_2 is the original, but it has a reference
 ```
 
 ### Do not end the lifetime of an owner if the owner has any living references 
@@ -155,7 +157,7 @@ class ClassA:
 
 def a_factory() -> ClassA:
     my_list: list[int] = [1, 2, 3]
-    object_a: auto = ClassA(my_list)  # X my_list lifetime ends when this function returns
+    object_a: auto = ClassA(my_list)  # ❌ my_list lifetime ends when this function returns
     return object_a
 
 
@@ -175,7 +177,7 @@ class ClassA:
     my_list: Valu(list[int])
 
     def get_my_list(self) -> list[int]:
-        return self.my_list  # X my_list lifetime does not end
+        return self.my_list  # ❌ my_list lifetime does not end
 
 
 if __name__ == "__main__":
@@ -202,7 +204,7 @@ class ClassA:
 if __name__ == "__main__":
     object_a: auto = ClassA([1, 2, 3])
     my_list_1: Ref(list[int]) = object_a.get_my_list()  # OK
-    my_list_2: list[int] = object_a.get_my_list()  # X
+    my_list_2: list[int] = object_a.get_my_list()  # ❌
 ```
 
 ### When initializing list, set, dict, or tuple data structures with some initial values, only pass temporaries or use `mov()` for the elements

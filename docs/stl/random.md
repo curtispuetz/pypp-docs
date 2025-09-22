@@ -5,7 +5,7 @@ Like Python's random standard library. Limited at the moment.
 ## Usage
 
 ```python
-import random
+from pypp_python import random
 
 
 def pseudo_fn():

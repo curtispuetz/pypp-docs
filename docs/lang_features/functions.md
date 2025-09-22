@@ -82,7 +82,7 @@ def a_void_fn():
 Like in Python
 
 ```python
-from typing import Callable
+from pypp_python import Callable
 
 
 def sum_fn(a: int, b: int) -> int:

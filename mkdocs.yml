@@ -1,4 +1,4 @@
-site_name: Py++ Lang
+site_name: Py++ Language
 theme:
   name: material
   palette:
@@ -76,5 +76,26 @@ nav:
       - random: stl/random.md
       - os: stl/os.md
       - shutil: stl/shutil.md
+  - External libraries:
+      - Introduction: external_libraries/introduction.md
+      - Pure library example: external_libraries/pure_library_example.md
+      - OpenGL example: external_libraries/opengl_example.md
+      - OpenGL example conclusion: external_libraries/opengl_example_conclusion.md
+      - 🚫noPyI libraries: external_libraries/nopyi_libraries.md
+      - List of current Py++ libraries: external_libraries/current_libraries.md
+  - Transpiler features:
+      - proj_info.json: transpiler_features/proj_info_json.md
+      - Configuring CMakeLists.txt: transpiler_features/cmake_lists.md
+      - Transpiler config:
+        - Introduction: transpiler_features/config/introduction.md
+        - Examples: transpiler_features/config/examples.md
+        - Better examples: transpiler_features/config/better_examples.md
+        - Mapping functions: transpiler_features/config/mapping_functions.md
+        - ann_assign_map.json Example: transpiler_features/config/ann_assign_map.md
+        - API documentation: transpiler_features/config/API.md
   - Advanced topics:
-      - Solving undefined behavior: advanced/solving_undefined_behavior.md
+      - Making Py++ easier and reducing undefined behavior: advanced/making_pypp_easier.md
+  - Contributing to Py++: contributing.md
+  - Easter eggs: easter_eggs.md
+  - Contact us: contact.md
+  - Donate: donate.md
