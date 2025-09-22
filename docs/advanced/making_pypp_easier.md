@@ -26,7 +26,7 @@ If I am missing any rules, i.e. there are other ways you can get code that runs 
 ### Only reassign a variable which is an owner and has no references
 
 ```python
-from dataclasses import dataclass
+from pypp_python import dataclass
 
 
 @dataclass
@@ -168,8 +168,7 @@ if __name__ == "__main__":
 ### In a return-by-value function/method, do not return a variable whose lifetime does not end at the end of the function/method
 
 ```python
-from pypp_python import auto, Valu
-from dataclasses import dataclass
+from pypp_python import auto, Valu, dataclass
 
 
 @dataclass
@@ -189,8 +188,7 @@ if __name__ == "__main__":
 
 
 ```python
-from pypp_python import auto, Valu, Ref
-from dataclasses import dataclass
+from pypp_python import auto, Valu, Ref, dataclass
 
 
 @dataclass
@@ -209,4 +207,14 @@ if __name__ == "__main__":
 
 ### When initializing list, set, dict, or tuple data structures with some initial values, only pass temporaries or use `mov()` for the elements
 
-TODO
+```python
+from pypp_python import mov
+
+
+if __name__ == "__main__":
+    a: list[int] = [3, 4]
+    b: list[list[int]] = [[1, 2], mov(a)]  # OK
+
+    c: list[int] = [3, 4]
+    d: list[list[int]] = [[1, 2], a]  # ❌
+```
