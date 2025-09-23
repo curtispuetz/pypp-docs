@@ -4,11 +4,11 @@
 
 Py++ variables can either be an `owner` or a `reference to an owner`. If it is an owner, that means it is responsible for managing the lifetime of the data.
 
-The below code illustrates when a variable is an `owner` when when it is a `reference to an owner`. The `Ref`, `Valu`, and `mov` keywords will be explained in later sections on this page.
+The below code illustrates when a variable is an `owner` when when it is a `reference to an owner`. The `Ref`, `Val`, and `mov` keywords will be explained in later sections on this page.
 
 
 ```python
-from pypp_python import Ref, Valu, mov, dataclass
+from pypp_python import Ref, Val, mov, dataclass
 
 
 @dataclass
@@ -25,10 +25,10 @@ def class_a_factory(list_param_a: list[int]) -> ClassA:
 @dataclass
 class ClassB:
     # list_member_b is an owner
-    list_member_b: Valu(list[int])
+    list_member_b: Val[list[int]]
 
 
-def class_b_factory(list_param_b: Valu(list[int])) -> ClassB:
+def class_b_factory(list_param_b: Val[list[int]]) -> ClassB:
     # list_param_b is an owner
     return ClassB(mov(list_param_b))
 
@@ -36,7 +36,7 @@ def class_b_factory(list_param_b: Valu(list[int])) -> ClassB:
 if __main__ == "__main__":
     my_list: list[int] = [1, 2, 3]  # my_list is an owner
 
-    my_list_ref: Ref(list[int]) = my_list  # my_list_ref is a reference to the owner
+    my_list_ref: Ref[list[int]] = my_list  # my_list_ref is a reference to the owner
 
     a: ClassA = class_a_factory(my_list)
 
@@ -50,16 +50,16 @@ if __main__ == "__main__":
 
 Pass-by-reference is like in C++ when a function parameter has the `&` symbol, and pass-by-value is like when it does not have any symbols.
 
-In Py++, parameters are pass-by-reference by default, and can be made pass-by-value with `Valu()`. However, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value (you cannot change that). 
+In Py++, parameters are pass-by-reference by default, and can be made pass-by-value with `Val[]`. However, the Py++ [primitive types](types/primitive_types.md) will always be pass-by-value (you cannot change that). 
 
 ```python
-from pypp_python import Valu
+from pypp_python import Val
 
 
-def my_function(a: list[int], b: float, c: Valu(set[int])):
+def my_function(a: list[int], b: float, c: Val[set[int]]):
     # a is pass-by-reference
     # b is pass-by-value because it is a primitive type
-    # c is pass-by-value because its type is wrapped in `Valu()`
+    # c is pass-by-value because its type is wrapped in `Val[]`
     pass
 
 
@@ -73,20 +73,20 @@ if __main__ == "__main__":
 
 For class data members, it is the same as function parameters. Pass-by-reference is like in C++ when a data member is defined with the `&` symbol, and pass-by-value is like when it does not have any symbols.
 
-Like function parameters, class data memebers are pass-by-reference by default, and can be made pass-by-value with `Valu()`. However, again like function parameters, the [primitive types](types/primitive_types.md) will always be pass-by-value.
+Like function parameters, class data memebers are pass-by-reference by default, and can be made pass-by-value with `Val[]`. However, again like function parameters, the [primitive types](types/primitive_types.md) will always be pass-by-value.
 
 ```python
-from pypp_python import Valu, dataclass
+from pypp_python import Val, dataclass
 
 
 @dataclass
 class ClassA:
     # a is pass-by-reference
     # b is pass-by-value because it is a primitive type
-    # c is pass-by-value because its type is wrapped in `Valu()`
+    # c is pass-by-value because its type is wrapped in `Val[]`
     a: list[int]
     b: float
-    c: Valu(set[int])
+    c: Val[set[int]]
 
 
 if __main__ == "__main__":
@@ -99,10 +99,10 @@ if __main__ == "__main__":
 
 For functions and methods, return-by-value is like in C++ when the return type has no symbols, and return-by-reference is like when it has the `&` symbol.
 
-In Py++, [Primitive types](types/primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref()`.
+In Py++, [Primitive types](types/primitive_types.md) will always be return-by-value. Every other type is return-by-value by default, and can be made return-by-reference with `Ref[]`.
 
 ```python
-from pypp_python import Ref, Valu, dataclass
+from pypp_python import Ref, Val, dataclass
 
 
 # return-by-value
@@ -112,10 +112,10 @@ def create_list() -> list[int]:
 
 @dataclass
 class ClassA:
-    list_member: Valu(list[int])
+    list_member: Val[list[int]]
 
     # return-by-reference
-    def get_list_member() -> Ref(list[int]):
+    def get_list_member() -> Ref[list[int]]:
         return list_member
 
 
@@ -124,7 +124,7 @@ if __main__ == "__main__":
 
     a: ClassA = ClassA(my_list)
 
-    my_list_ref: Ref(list[int]) = a.get_list_member()
+    my_list_ref: Ref[list[int]] = a.get_list_member()
 ```
 
 ## Using references to an owner
@@ -142,12 +142,12 @@ I'll show now what a temporary is and what `mov()` is.
 A temporary is an object created as a result of an expression but is not explicitly named.
 
 ```python
-from pypp_python import Valu, dataclass
+from pypp_python import Val, dataclass
 
 
 @dataclass
 class ClassB:
-    list_member_b: Valu(list[int])
+    list_member_b: Val[list[int]]
 
 
 if __main__ == "__main__":
@@ -161,12 +161,12 @@ if __main__ == "__main__":
 Note: after calling `mov(v)`, you should not use `v` anymore (just like in C++).
 
 ```python
-from pypp_python import Valu, mov, dataclass
+from pypp_python import Val, mov, dataclass
 
 
 @dataclass
 class ClassB:
-    list_member_b: Valu(list[int])
+    list_member_b: Val[list[int]]
 
 
 if __main__ == "__main__":

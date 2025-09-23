@@ -89,7 +89,7 @@ For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](fo
 
 - `mov`
 - `Ref`
-- `Valu`
+- `Val`
 
 ## Resources
 

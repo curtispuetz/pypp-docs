@@ -17,7 +17,7 @@ If I am missing any rules, i.e. there are other ways you can get code that runs 
 - Only use `mov(v)` if `v` is an owner and has no references
 - Do not end the lifetime of an owner if the owner has any living references 
 - In a return-by-value function/method, do not return a variable whose lifetime does not end at the end of the function/method
-- When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref()`
+- When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref[]`
 - When initializing list, set, dict, or tuple data structures with some initial values, only pass temporaries or use `mov()` for the elements
 
 
@@ -45,16 +45,16 @@ if __name__ == "__main__":
 ### For a function/method parameter that is pass-by-value, only pass temporaries or use `mov()`
 
 ```python
-from pypp_python import Valu, mov, auto
+from pypp_python import Val, mov, auto
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
     my_str: str
 
 
-def a_factory(my_list: Valu(list[int])) -> ClassA:
+def a_factory(my_list: Val[list[int]]) -> ClassA:
     return ClassA(mov(my_list), "hello")
 
 
@@ -71,12 +71,12 @@ if __name__ == "__main__":
 ### For a class data member that is pass-by-value, only pass temporaries or use `mov()` (similar to above)
 
 ```python
-from pypp_python import Valu, mov, auto
+from pypp_python import Val, mov, auto
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
 
 
 if __name__ == "__main__":
@@ -92,12 +92,12 @@ if __name__ == "__main__":
 ### After doing `mov(v)`, do not use `v`
 
 ```python
-from pypp_python import Valu, mov, auto
+from pypp_python import Val, mov, auto
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
 
 
 if __name__ == "__main__":
@@ -110,15 +110,15 @@ if __name__ == "__main__":
 ### Only use `mov(v)` if `v` is an owner and has no references
 
 ```python
-from pypp_python import Valu, mov, auto
+from pypp_python import Val, mov, auto
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
 
 
-def class_a_factory(my_list: Valu(list[int])) -> ClassA:
+def class_a_factory(my_list: Val[list[int]]) -> ClassA:
     return ClassA(mov(my_list))  # OK
 
 
@@ -135,19 +135,19 @@ if __name__ == "__main__":
     object_a1: auto = class_a_factory(mov(my_list_0))  # OK
 
     my_list_1: list[int] = [1, 2, 3]
-    my_list_ref: Ref(list[int]) = my_list_1
+    my_list_ref: Ref[list[int]] = my_list_1
 
     object_a0: auto = class_a_factory(mov(my_list_ref))  # ❌ my_list_ref is a reference
 
     my_list_2: list[int] = [1, 2, 3]
-    my_list_2_ref: Ref(list[int]) = my_list_2
+    my_list_2_ref: Ref[list[int]] = my_list_2
     object_a1: auto = class_a_factory(mov(my_list_2))  # ❌ my_list_2 is the original, but it has a reference
 ```
 
 ### Do not end the lifetime of an owner if the owner has any living references 
 
 ```python
-from pypp_python import Valu, mov, auto
+from pypp_python import Val, mov, auto
 
 
 @dataclass
@@ -168,12 +168,12 @@ if __name__ == "__main__":
 ### In a return-by-value function/method, do not return a variable whose lifetime does not end at the end of the function/method
 
 ```python
-from pypp_python import auto, Valu, dataclass
+from pypp_python import auto, Val, dataclass
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
 
     def get_my_list(self) -> list[int]:
         return self.my_list  # ❌ my_list lifetime does not end
@@ -184,24 +184,24 @@ if __name__ == "__main__":
     my_list: list[int] = object_a.get_my_list()
 ```
 
-### When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref()`
+### When calling a return-by-reference function/method, the type annotation of the variable you assign the result to must be wrapped in `Ref[]`
 
 
 ```python
-from pypp_python import auto, Valu, Ref, dataclass
+from pypp_python import auto, Val, Ref, dataclass
 
 
 @dataclass
 class ClassA:
-    my_list: Valu(list[int])
+    my_list: Val[list[int]]
 
-    def get_my_list(self) -> Ref(list[int]):
+    def get_my_list(self) -> Ref[list[int]]:
         return self.my_list
 
 
 if __name__ == "__main__":
     object_a: auto = ClassA([1, 2, 3])
-    my_list_1: Ref(list[int]) = object_a.get_my_list()  # OK
+    my_list_1: Ref[list[int]] = object_a.get_my_list()  # OK
     my_list_2: list[int] = object_a.get_my_list()  # ❌
 ```
 
