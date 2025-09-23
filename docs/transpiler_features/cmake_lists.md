@@ -22,9 +22,9 @@ If you put a file `.pypp/transpiler_config/cmake_lists.json` in your project:
 }
 ```
 
-then the Py++ transpiler will put the `add_lines` in the CMakeLists.txt file, and will link the libraries in `link_libraries` to `pypp_common` (all your project executables).
+then, the Py++ transpiler will put the `add_lines` in the CMakeLists.txt file, and will link the libraries in `link_libraries` to `pypp_common` (all your project executables).
 
-With this `cmake_lists.json` file, your generated CMakeLists.txt will will look something like this:
+With this `cmake_lists.json` file in your project, your generated CMakeLists.txt will look something like this:
 
 ```cmake
 cmake_minimum_required(VERSION 4.0)
