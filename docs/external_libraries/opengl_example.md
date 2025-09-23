@@ -1,11 +1,11 @@
 # Integrating OpenGL to Py++
 
-The following is an example of how to create a Py++ library that integrates OpenGL. Specifcally, it integrates the C++ glad library.
+The following is an example of how to create a Py++ library that integrates OpenGL. Specifically, it integrates the C++ GLAD library.
 
 
 ## pyproject.toml
 
-We will start with the pyproject.toml file. Our library name will be `pypp-opengl` and we will put everything in directory `pypp_opengl` (like a standard Python library setup).
+We will start with the pyproject.toml file. Our library name will be `pypp-opengl` and we will put everything in the directory `pypp_opengl` (like a standard Python library setup).
 
 ```toml
 [project]
@@ -29,11 +29,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-We have the dependencies `numpy` and `PyOpenGL` because you will see that we actually use those in our libraries Python code.
+We have the dependencies `numpy` and `PyOpenGL`.
 
 ## cmake_lists.json
 
-Now lets add a file `pypp_opengl/pypp_data/transpiler_config/cmake_lists.json`
+Now, let's add a file `pypp_opengl/pypp_data/transpiler_config/cmake_lists.json`
 
 ```json
 {
@@ -59,7 +59,7 @@ This file will make it so that those lines are added to the generated CMakeLists
 
 ## Our API
 
-Now lets define our libraries API. Under `pypp_opengl` we will add the following Python files:
+Now, let's define our libraries API. Under `pypp_opengl`, we will add the following Python files:
 
 ```python
 # __init__.py
@@ -197,11 +197,11 @@ def pseudo_fn():
     vbo: GL.GLuint = gl_gen_buffer()  # example special function usage
 ```
 
-Its not important for now, but the reason we defined these special ones is because the original API for them was not very compatiable for our purposes.
+It's not important for now, but the reason we defined these special ones is that the original API for them was not very compatible with Py++.
 
 ## Our custom C++ code
 
-Now lets define some custom C++ code that we need to match to the special functions refered to in the last section. Under `pypp_opengl/pypp_data/cpp/pypp_opengl` we will add:
+Now, let's define some custom C++ code that we need to match the special functions referred to in the last section. Under `pypp_opengl/pypp_data/cpp/pypp_opengl` we will add:
 
 ```cpp
 // custom.h
@@ -320,7 +320,7 @@ pypp::PyStr gl_get_program_info_log(GLuint program)
 
 ## Our transpiler config
 
-Now, as a last step, we need to add [transpiler config](../transpiler_features/config/introduction.md) which will tell the Py++ transpiler for any projects that have our library installed how to translate certain things.
+Now, as a last step, we need to add [transpiler config](../transpiler_features/config/introduction.md), which will tell the Py++ transpiler for any projects that have our library installed how to translate certain things.
 
 ### Mapping `GL.` usage
 
@@ -350,7 +350,7 @@ def mapping_fn(node: ast.Call, d: Deps, name_str: str) -> str:
     return name_str.split(".")[1]
 ```
 
-Just so that it is clear: in the Py++ code we write will use `GL.glSomeName`, but in the generated C++ code for users of our library, we need it to be `glSomeName`.
+Just so that it is clear: when using this Py++ library, we will write `GL.glSomeName`, but in the generated C++ code, we need it to be `glSomeName`.
 
 ### Mapping calls
 
@@ -522,7 +522,7 @@ def mapping_fn(node: ast.Call, d: Deps) -> str:
 
 ### Always passing by value
 
-Lastly, lets make primitve OpenGL types like GLuint, always pass-by-value for function parameters and class data memebers. `pypp_opengl/transpiler_config/always_pass_by_value.json` 
+Lastly, let's make primitive OpenGL types like GLuint and others always pass-by-value for function parameters and class data members. `pypp_opengl/transpiler_config/always_pass_by_value.json` 
 
 ```json
 {
@@ -696,21 +696,21 @@ pypp_opengl/
 
 ## Building our library
 
-Assuming we have `hatchling` installed in our projects virtual environment, we can run the following to build our project: `python -m hatchling build`.
+Assuming we have `hatchling` installed in our project's virtual environment, we can run the following to build our project: `python -m hatchling build`.
 
 ## Distributing our library
 
-Afterign building our project, we can use `twine` or another way to distribute our library to PyPI.
+After building our project, we can use `twine` or another way to distribute our library to PyPI.
 
 ## Installing our library
 
-If the library is on PyPI and named `pypp-opengl`, then we can install it to our project with `pip install pypp-opengl`.
+If the library is on PyPI and named `pypp-opengl`, then we can install it in our project with `pip install pypp-opengl`.
 
 Or, if we just built the project locally and didn't upload it to PyPI, we can install it with `pip install path/to/whl_file.whl`.
 
 ## Showcase library usage
 
-This section shows the standard OpenGL example of drawing a triangle with this `pypp-opengl` library we created. Then it shows the generated C++ code that the Py++ transpiler generates. This showcases everything we worked on in the above sections, especially in the `transpiler_config`.
+This section shows the standard OpenGL example of drawing a triangle with the `pypp-opengl` library we created. Then it shows the generated C++ code that the Py++ transpiler generates. This showcases everything we worked on in the above sections, especially in the `transpiler_config`.
 
 In order to work with OpenGL, we also need a window management library. So, we are using a Py++ `pypp-glfw` library in this example as well.
 
@@ -886,7 +886,7 @@ if __name__ == "__main__":
     opengl_test()
 ```
 
-this translates to a .cpp file:
+This translates to a .cpp file:
 
 ```cpp
 #include "cstdlib"
