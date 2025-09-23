@@ -13,4 +13,5 @@ Also, we should note that for our example library, there might be some OpenGL fu
 **Considering these things, I conclude that integrating C++ libraries, or parts of them, into the Py++ ecosystem is challenging in terms of design work, but that once these design skills are acquired by an individual, producing a Py++ library that integrates a C++ library is straightforward and does not require great effort.**
 
 ## Final note
-The fact that it does not ultimately require great effort to integrate a C++ library into the Py++ ecosystem is, I think, one of the most important details of Py++. And this is the reason why I worked a lot on the [transpiler config feature](../transpiler_features/config/introduction.md).
+
+I think it is one of the most important details of Py++ that it does not require great effort to integrate a C++ library. This is the reason why I worked a lot on the [transpiler config feature](../transpiler_features/config/introduction.md).
