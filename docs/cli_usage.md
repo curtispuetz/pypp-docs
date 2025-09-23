@@ -10,7 +10,7 @@ You can initialize your Py++ project in your current directory with:
 pypp init
 ```
 
-This will just create:
+This will create:
 - a `.pypp` directory with:
     - `cpp` and `resources` directories
     - a `proj_info.json` file with default configuration.
@@ -64,7 +64,7 @@ This one will delete the entire `.pypp/cpp` directory (or whatever directory you
 
 You will want to run this command if you update your Py++ CLI to a new version, because the C++ template code could have changed.
 
-There is no harm in running this command. Only your next C++ build will be slower because everything need to be recompiled.
+There is no harm in running this command. Only your next C++ build will be slower because everything needs to be recompiled.
 
 ```console
 pypp delete_cpp
@@ -76,7 +76,7 @@ This one will delete the entire `libs` directory in `.pypp/cpp` (or whatever dir
 
 You will want to run this command if you upgrade one of your Py++ libraries, because the transpiler won't overwrite the C++ code for the library in the `libs` directory if the C++ code has changed.
 
-Again, there is no harm in running this command. Only your next C++ build will be slower because everything need to be recompiled.
+Again, there is no harm in running this command. Only your next C++ build will be slower because everything needs to be recompiled.
 
 ```console
 pypp delete_cpp_libs
