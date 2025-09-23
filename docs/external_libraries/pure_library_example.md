@@ -32,7 +32,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 ```
 
-You can see that we added the pypp-python dependency (because its useful to have this for all Py++ projects), and that we are excluding some things in the `cpp` directory from the build. The things that we are excluding we don't want to be packaged into our library. They are written to the `cpp` directory by the Py++ transpiler so that we can make sure our libraries generated C++ code builds without errors, but we don't want to package them into our library.
+You can see that we added the pypp-python dependency (because it's useful to have this for all Py++ projects), and that we are excluding some things in the `cpp` directory from the build. The things that we are excluding, we don't want to be packaged into our library. They are written to the `cpp` directory by the Py++ transpiler so that we can make sure our library's generated C++ code builds without errors, but we don't want to package them into our library.
 
 ## .pypp/proj_info.json
 
@@ -49,13 +49,13 @@ Next, we should add a `.pypp/proj_info.json` file to our project:
 }
 ```
 
-We pick a namespace `pure_test_0` for our library, so that our names do not interfer with the code of our libraries users.
+We pick a namespace `pure_test_0` for our library, so that our names do not interfere with the code of our library's users.
 
-We need to specify `override_cpp_write_dir` and `write_metadata_to_dir` to those specific `pypp_data/cpp` and `pypp_data` directories. These are the locations where the Py++ transpiler will write the C++ code to and where it will write a metadata file to, respectively. We need to do this because we need to package those things into our library in those specific locations for distribution.
+We need to specify `override_cpp_write_dir` and `write_metadata_to_dir` to those specific `pypp_data/cpp` and `pypp_data` directories. These are the locations where the Py++ transpiler will write the C++ code and where it will write a metadata file, respectively. We need to do this because we need to package those things into our library in those specific locations for distribution.
 
 ## Writing our library code
 
-That is all the configuration we need. Now we can just write our Py++ code. Lets say we want our library to just have a function to add two integers (just an easy example):
+That is all the configuration we need. Now we can just write our Py++ code. Let's say we want our library to just have a function to add two integers (just an easy example):
 
 ```python
 # pypp_pure_library_test_0/add_ints.py
@@ -85,7 +85,7 @@ This will write C++ code to the `pypp_pure_library_test_0/pypp_data/cpp` directo
 
 ## Building the generated C++ project
 
-To make sure that we have not made any mistakes, we should build the C++ project to confirm there are no compilation errors. You can navigate to the `pypp_pure_library_test_0/pypp_data/cpp` directory and do `CMake` commands, or if you have `clang` installed you can do
+To make sure that we have not made any mistakes, we should build the C++ project to confirm that there are no compilation errors. You can navigate to the `pypp_pure_library_test_0/pypp_data/cpp` directory and do `CMake` commands, or if you are using the `clang` compiler you can do
 
 ```text
 pypp do build
@@ -115,7 +115,7 @@ After we have made sure our C++ code builds without compilation errors, we build
 python -m hatchling build
 ```
 
-Now we can distribute it to PyPI or github
+Now we can distribute it to PyPI or GitHub
 
 ## Using our library in a project
 
@@ -131,7 +131,7 @@ Or, if it is not distributed and just built locally
 pip install path/to/whl_file.whl
 ```
 
-Thats it, now we can use our library within our Py++ project:
+That's it, now we can use our library within our Py++ project:
 
 ```python
 from pypp_pure_library_test_0 import add
