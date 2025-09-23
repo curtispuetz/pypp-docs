@@ -69,17 +69,17 @@ When you create a pull request that makes sense to me, I will pull your code and
 
 ### Working with me on code
 
-In this section, I want to tell you some information about how I work on code so that you can understand my behavior if you choose to work with me on writting code. I am commited to execellence for my code (and in mostly everything I do), and at the same time I know that different people can have very different ideas about what code is excellent/best. Furthermore, I know that in many cases when people have different ideas, they could both be correct for their own brain.
+In this section, I want to tell you some information about how I work on code so that you can understand my behavior if you choose to work with me on writting code. I am commited to excellence for my code (and in mostly everything I do), and at the same time I know that different people can have very different ideas about what code is excellent/best. Furthermore, I know that in many cases when people have different ideas, they could both be correct for their own selves.
 
-If I merge your pull request, I'll likely take the code after and rearrange and refactor it a lot to fit my system. This is because I have a system and I am very particular about my project structure (where certain functionality goes folder/file wise) and about having small classes, functions, and methods. So, I do not care if you follow my system in your pull requests, because I will rearrange and refactor the code myself.
+If I merge your pull request, I'll likely take the code after and rearrange and refactor it a lot to fit my system. This is because I have a system and I am very particular about my project structure (where certain functionality goes folder/file wise) and about having small classes, functions, and methods. So, I do not care if you follow my system in your pull requests, because I will rearrange and refactor the code myself, and I havn't documented what my system is, so you likely can't pick it up.
 
-I prefer your code in your pull request to be readable enough to me so that it does not require a lot of my time to read through and understand what is going on. If you're code does not work for me in this way, it might not mean that there is any real problem with your code because it might just be me. I accept that there is a lot of different ways to write code and your style might be great for your brain, even if it is not great for my brain. But, unfortunately, if I cannot underand your code relatively quickly then I will not look very long at your pull request, even though I wish I had the time to so that I could work with you. In this case I will likely leave a comment on your pull request about why I am having trouble understanding it and invite you to create a new revision if you think you can make it more understandable for me.
+I prefer your code in your pull request to be readable enough to me so that it does not require a lot of my time to read through and understand what is going on. If you're code does not work for me in this way, it might not mean that there is any real problem with your code because it might just be me. I accept that there is a lot of different ways to write code and your style might be great for your brain, even if it is not great for my brain. But, unfortunately, if I cannot underand your code relatively quickly then I will not look very long at your pull request, even though I wish I had the time to, so that I could work with you. In this case I will likely leave a comment on your pull request about why I am having trouble understanding it and invite you to create a new revision if you think you can make it more understandable for me.
 
 ## My Contributing Philosophy
 
 I will explain my philosphy for contributions so that it makes more sense why I recommend that you contribute with your own Py++ library projects or with ideas, and then secondly with working on the Py++ source code.
 
-**I believe in distribution of responsibility**. For example, this is unlike working at lots of modern tech companies where the things you work on is together with a team of 4-12 people and you share ownership/responsibility of everything. Instead, I believe in individual distribution of responsibility, because I think what happens as a result is people:
+**I believe in distribution of responsibility**. For example, this is unlike working at lots of modern tech companies where the things you work on is together with a team of 4-12 people and you share ownership/responsibility of everything. Instead, I believe in individual distribution of responsibility, because I think what happens as a result is that people:
 
 - Can take as much responsibility as they can manage
 - Are able to do more innovation
@@ -87,20 +87,6 @@ I will explain my philosphy for contributions so that it makes more sense why I 
 - Become more competent and skilled
 - Produce higher quality work
 
-This is why I see most Py++ code contributors responsibility should be to make excellent Py++ libraries, which they have ownership of. Because, I want the Py++ project to develop successfully (higher quality work done) and also because I want the contributors to feel like their time is well spent here.
+This is why I see most Py++ code contributors responsibility should be to make excellent Py++ libraries, which they have ownership of. Because, I want the Py++ project to develop successfully (higher quality work done) and also because I want the contributors to feel like their time is well spent. Then, I see my responsibility to be for the CLI/transpiler and C++ template code. Specifically, to maintain the code, fix bugs, and implement new CLI and Language features.
 
-I see my responsibility as for the CLI/transpiler and C++ template code, to maintain, fix bugs, and implement new CLI and Language features. 
-
-There is a huge amount of work to be done in Py++ libraries, and even in [coming up with ideas and feedback](#contributing-with-thoughful-ideas). At a certain point, which we are basically at now, creating Py++ libraries does more for improving the language than what new CLI and Language features does for improving the language.
-
-As I have already basically mentioned, the reason I believe in individual distribution of responsibility is because I think it will be **better for the success of the Py++ project and for us as individuals.** To make the project better, we need to fix bugs when found, come up with better ideas, add high-quality features, and create more high-quality Py++ libraries. 
-
-This is a simple way I often think about it: 
-
-I am able to **handle** the Py++ CLI/transpiler and C++ template code at the time being, since I am putting my full-time energy into this project at the moment. Therefore, other code contributors should take up projects they can **handle** that help Py++. This will result in being able to **handle** the most things at once given the amount of people working. Furthermore, if someone has a **handle** on their project, then it is prefered to not have more people writing code on that project, because **the individual will get the needed code done anyway and we want them to do it themselves so they can continue to develop their competence and skills.**
-
-That being said, I think if you want to there are lots of situations where offering a helping hand by writing code for someones project makes sense. Especially for a hobby project where you really should do what you want to do. But I think the person should invite you to do it first (like I have more my repos) or say yes if you ask them.
-
-Keep in mind that what I am talking about here of 'contributing code' to someones project is different than offering suggestions and ideas about anything related to their project. That type of thing is always good.
-
-**So, I invite you to take up a Py++ project that you are the owner of and that contributes to your competence and skills!**
+That being said, since you would be working on Py++ as a hobby, you should work on what you want to work on. If you are interested on working on Py++ source code, you can, as I described above.
