@@ -94,9 +94,9 @@ def pseudo_fn(my_list: list[str]):
 
 ## Accessing an element
 
-Using the `[]` operator is supported, but will give undefined behavior if the index is out of range and does not support negative indices like Python.
+Using the `[]` operator is supported, but it will give undefined behavior if the index is out of range, and it does not support negative indices like Python.
 
-If you want negative indices support and error handling similar to Python where a `IndexError` is thrown when the index is out of range, you can use the `lg` built-in function
+If you want negative indices support and error handling similar to Python, where an `IndexError` is thrown when the index is out of range, you can use the `lg` built-in function
 
 
 ```python
