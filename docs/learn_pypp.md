@@ -6,9 +6,9 @@ I assume the reader has a little knowledge of C++.
 
 ## Project structure
 
-Your project is just like a Python project except it has an extra directory named `.pypp`. This directory contains metadata and configuration for your Py++ project and the `.pypp/cpp` directory is also where Py++ generates the C++ code to.
+Your project is just like a Python project, except it has an extra directory named `.pypp`. This directory contains metadata and configuration for your Py++ project, and the `.pypp/cpp` directory is also where the Py++ transpiler writes the C++ code.
 
-So, you can have `.py` files whereever you want in your project directory and use `from ... import ...` statements to import code from other files, just like in Python.
+So, you can have `.py` files wherever you want in your project directory and use `from ... import ...` statements to import code from other files, just like in Python.
 
 ## Main files and source files
 
@@ -16,10 +16,10 @@ If your `.py` file has a Python main block (i.e. `if __name__ == "__main__":`) a
 
 Each main file that you have in your project will be transpiled to a .cpp file that has a main function. Furthermore, for each main file in your project, the Py++ transpiler will add an executable to the generated CMakeLists.txt file. Therefore, for each main file in your project, CMake will generate an executable that you can run.
 
-Source files on the other hand are transpiled to a `.h` file, and in most cases, a `.cpp` file as well.
+Source files, on the other hand, are transpiled to a `.h` file, and in most cases, a `.cpp` file as well.
 
 ### Main file hello world example
-Lets show a main file example and the C++ code it transpiles to.
+Let's show a main file example and the C++ code it transpiles to.
 
 ```python
 if __name__ == "__main__":
@@ -51,7 +51,7 @@ You must use Python-style type hints everywhere. I.e. for variable definitions, 
 
 ## Memory management
 
-At this point, you should read the page on [memory management](lang_features/manual_memory_management.md). Then, I invite you to come back and look at the examples below, which shows some common Py++ code and how the Py++ transpiler translates this code to C++.
+At this point, you should read the page on [memory management](lang_features/manual_memory_management.md). Then, I invite you to come back and look at the examples below, which show some common Py++ code and how the Py++ transpiler translates this code to C++.
 
 ## Examples
 
@@ -109,13 +109,12 @@ pypp::PyList<int> list_add(pypp::PyList<int> &a, pypp::PyList<int> &b,
 
 - You can see that the types `list` and `str` in the Py++ code translate to `pypp::PyList` and `pypp::PyStr`
     - `pypp::PyList` and `pypp::PyStr` are thin wrappers around `std::vector` and `std::string` respectively
-    - Another note: Not shown in this example, but there is also `pypp::PyDict` and `pypp::PySet`, for the Py++ `dict` and `set` types, which thinly wrap `std::unordered_map` and `std::unordered_set`, respectively
 - You can see that the C++ code is wrapped in a `me` namespace
     - All Py++ source files you write are translated to C++ files wrapped in a `me` namespace
 
 ### 2) Union and Optional types
 
-If you are used to using Python's `isinstance()` function to check the type of an object, you can do something very similar in Py++ with `isinst()`.
+If you are used to using Python's `isinstance()` function to check the type of an object, you can do something very similar in Py++ with `isinst()` and the Py++ `Uni` type.
 
 If you add the following function to a Py++ source file
 
