@@ -1,6 +1,6 @@
 # proj_info.json
 
-In your projects `.pypp` directory, you will have a `proj_info.json` file. There is some configuration parameters in here that can control the Py++ transpiler behavior.
+In your projects `.pypp` directory, you will have a `proj_info.json` file. There are configuration parameters in this file that control the Py++ transpiler behavior.
 
 ```json
 {
@@ -19,6 +19,12 @@ This option specifies the namespace that all your generated C++ code is wrapped 
 
 Default: `"me"`
 
+# ignored_files
+
+This option allows you to specify Python files that the Py++ transpiler will ignore. It can be useful if you have some files that are a work in progress, but you still want to transpile/build/run your other code. Wildcard file matching is supported.
+
+Default: `[]`
+
 # override_cpp_write_dir
 
 With this option, you can specify a different directory for the Py++ transpiler to write C++ code to. When `null`, it writes to `.pypp/cpp`.
@@ -33,12 +39,6 @@ This option specifies where the Py++ transpiler will write metadata about your p
 
 Default: `null`
 
-# ignored_files
-
-This option allows you to specify Python files that the Py++ transpiler will ignore. It can be useful if you have some files that are a work in progress but you still want to transpile/build/run your other code.
-
-Default: `[]`
-
 # cmake_minimum_required_version
 
 This option specifies what version the Py++ transpiler will put as the minimum required version in the CMakeLists.txt file. For example:
@@ -49,8 +49,8 @@ Default: `4.0`
 
 # cpp_dir_is_dirty
 
-When this option is `true`, the Py++ transpiler will copy the C++ template project to your C++ directory. After the template has been copied the transpiler will automatically set this option to `false`.
+When this option is `true`, the Py++ transpiler will copy the C++ template project to your C++ directory. After the template has been copied, the transpiler will automatically set this option to `false`.
 
-This option needs to be set to `true` if you are transpiling to a directory for a first time.
+This option needs to be set to `true` if you are transpiling to a directory for the first time.
 
 Default: `true` (but automatically becomes `false` after C++ template is copied)
