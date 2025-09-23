@@ -30,4 +30,4 @@ def mapping_function(
 
 ```
 
-then when you write an annotated assignment, like `a: CustomType[int] = CustomType(4, 2)`, it will be converted to `CustomType<int> a = CustomType<int>(4, 2)` in the generated C++ code.
+then, when you write an annotated assignment, like `a: CustomType[int] = CustomType(4, 2)`, it will be converted to `CustomType<int> a = CustomType<int>(4, 2)` in the generated C++ code.
