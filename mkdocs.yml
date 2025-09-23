@@ -40,34 +40,36 @@ nav:
         - tuple: lang_features/types/tuple.md
         - union: lang_features/types/union_type.md
         - slice: lang_features/types/slice.md
-        - list of primitive types: lang_features/types/primitive_types.md
+        - primitive types: lang_features/types/primitive_types.md
       - operators:
         - boolean: lang_features/operators/boolean.md
         - comparison: lang_features/operators/comparison.md
         - unary: lang_features/operators/unary.md
         - other: lang_features/operators/other.md
       - if statements: lang_features/if_elif_else.md
+      - conditional expressions: lang_features/conditional_expression.md
       - for loops: lang_features/for_loops.md
       - while loops: lang_features/while_loops.md
       - functions: lang_features/functions.md
       - lambda functions: lang_features/lambda_functions.md
+      - imports: lang_features/imports.md
+      - assert: lang_features/assert.md
+      - yield and yield from: lang_features/yield.md
+      - pass: lang_features/pass.md
+      - comprehensions: lang_features/comprehensions.md
+      - type aliases: lang_features/type_aliases.md
       - classes: lang_features/classes.md
       - interfaces: lang_features/interfaces.md
       - config classes: lang_features/config_classes.md
-      - conditional expressions: lang_features/conditional_expression.md
-      - imports: lang_features/imports.md
-      - file I/O: lang_features/file_io.md
-      - built-in functions: lang_features/built_in_functions.md
-      - assert: lang_features/assert.md
-      - yield and yield from: lang_features/yield.md
-      - comprehensions: lang_features/comprehensions.md
-      - type aliases: lang_features/type_aliases.md
       - exceptions:
         - handling: lang_features/exceptions/handling.md
         - defining your own: lang_features/exceptions/defining.md
         - raising: lang_features/exceptions/raising.md
         - supported types: lang_features/exceptions/supported_types.md
       - resources: lang_features/resources.md
+      - file I/O: lang_features/file_io.md
+      - built-in functions: lang_features/built_in_functions.md
+      - other keywords: lang_features/other_keywords.md
       - underscores: lang_features/underscores.md
       - constants: lang_features/constants.md
   - Standard library:

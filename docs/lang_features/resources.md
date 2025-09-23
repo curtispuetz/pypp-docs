@@ -1,6 +1,6 @@
 # Resources
 
-There is a built-in function `res_dir()` which returns a string for the path to the project resources dir. The resources dir located at `.pypp/resources`.
+There is a built-in function `res_dir()` which returns a string for the path to the project resources directory. The resources directory located at `.pypp/resources`.
 
 
 ## Usage

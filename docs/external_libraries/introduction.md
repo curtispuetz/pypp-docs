@@ -1,16 +1,16 @@
 # External libraries introduction
 
-Py++ supports external libraries and uses [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) to make library management easy.
+Py++ supports external libraries and uses [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) and Python virtual environments to make library management easy.
 
 ## Installing a Py++ library to your project
 
-In order to use external libraries, you need to have a Python virtual environment installed in your Py++ project directory and the name of the virtual environment directory must be `.venv`. You can create that with this exact command:
+In order to use external libraries, you need to have a Python virtual environment installed in your Py++ project directory (at the same level as your `.pypp` directory) and the name of the virtual environment directory must be `.venv`. You can create that with this exact command:
 
 ```text
 python -m venv .venv
 ```
 
-When you install external libraries with `pip`, you should install them to this virtual environment. For example, with the virtual environment activated:
+When you install external libraries with `pip`, you should install them to this virtual environment. For example, with the virtual environment activated, simply run:
 
 ```text
 pip install pypp-opengl
@@ -27,9 +27,9 @@ In general, to create a Pure Py++ library, you follow the same process as creati
 
 The extra thing you need to do however, is to transpile your code with the Py++ transpiler, and make sure the generated C++ code is packaged into your library when you build it. Specifically, the C++ code needs to be at `my_lib_name/pypp_data/cpp`. On [this page](pure_library_example.md), is an example of creating and using a Pure Py++ library.
 
-## How installed libraries work
+## Note on how installed libraries work
 
-You install Py++ libraries to your project with pip. Then, each time you transpile your Py++ code, the transpiler looks through your `site-packages` directory of your Python virtual environment to see if any of the packages match a Py++ project structure. If it finds any Py++ libraries, then it copies the libraries C++ code to your projects C++ directory (if it has not already done so in a previous transpile).
+Each time you transpile your Py++ code, the transpiler looks through the `site-packages` directory of your virtual environment to see if any of the packages match a Py++ project structure. If it finds any Py++ libraries, then it copies the libraries C++ code to your projects C++ directory (if it has not already done so in a previous transpile).
 
 ## Creating a Py++ library that integrates with existing C++ libraries
 
@@ -43,9 +43,9 @@ If you want to integrate an existing C++ library, and you have access to the C++
 
 ### If you can integrate the C++ library just through a CMakeLists.txt file
 
-If you want to integrate an existing C++ library that can be integrated to a C++ project just through a CMakeLists.txt file, it is even easier to do. You can add to your Py++ library a `cmake_lists.json` file which tells the Py++ transpiler for projects that have your library installed what should be added to the generated CMakeLists.txt file. Its best to look at the [OpenGL example](opengl_example.md#cmake_listsjson) to see how that works.
+If you want to integrate an existing C++ library that can be integrated to a C++ project just through a CMakeLists.txt file (e.g. with `FetchContent`), it is even easier to do. You can add to your Py++ library a `cmake_lists.json` file which tells the Py++ transpiler for projects that have your library installed what should be added to the generated CMakeLists.txt file. Its best to look at the [OpenGL example](opengl_example.md#cmake_listsjson) to see how that works.
 
-### Ensuring the Py++ transpiler knowns how to transpile code from your Py++ library
+### Ensuring the Py++ transpiler knows how to transpile code from your Py++ library
 
 There is, of course, another step in the process of integrating an existing C++ library. If you define for your library the API
 

@@ -8,5 +8,3 @@ A bug could be:
 - Errors thrown by the Py++ CLI that are wrong or don't make sense
 - Something that is not as performant in Py++ as it is in C++ with the same features
 - Etc.
-
-
