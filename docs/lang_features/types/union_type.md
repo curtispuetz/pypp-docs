@@ -1,6 +1,6 @@
 # Unions
 
-A departure from Python, Py++ Unions are the way that Py++ handles variables which can be different types or which can be 'None'.
+A small departure from Python, Py++ Unions are the way that Py++ handles variables which can be different types or which can be 'None'.
 
 ## Declaration
 
