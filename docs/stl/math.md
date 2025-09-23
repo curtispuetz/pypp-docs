@@ -5,7 +5,7 @@ Like Python's math standard library. Limited at the moment.
 ## Usage
 
 ```python
-from pypp_python import math
+from pypp_python.stl import math
 
 
 def pseudo_fn():
@@ -27,9 +27,13 @@ def pseudo_fn():
 - `tan`
 - `radians`
 
-Note: others may also work. If the Python math function name (i.e. `math.my_name`) corresponds exactly to the C++ std:: `<cmath>` function name (i.e. `std::my_name`), then it will likely work, because the Py++ transpiler just translates `math.my_name` to `std::my_name`. I will do testing and support the other math functions later.
-
 ## Supported attributes
 
 - `pi`
 
+
+## Note about other functions and attributes
+
+I will add support and testing for other math functions as time allows.
+
+Others functions and attributes may also work. If the Python math function/attribute name (i.e. `math.my_name`) corresponds exactly to the C++ std:: `<cmath>` function/attribute name (i.e. `std::my_name`), then it will likely work, because the Py++ transpiler just translates `math.my_name` to `std::my_name`. 
