@@ -71,7 +71,7 @@ then `GLuint` will also always be pass-by-value.
 
 ## subscriptable_types.json
 
-If you are using a type with a subscript (for example, `list[int]` is a type `list` with an `int` subscript), then the Py++ transpiler won't automatically translate the square brackets to angle brackets that we need in the generated C++ code. For a `list` it will do it becuase the Py++ transpiler has that configured. But for other types to do it the type must be listed in a `subscriptable_types.json` file.
+If you are using a type with a subscript (for example, `list[int]` is a type `list` with an `int` subscript), then the Py++ transpiler won't automatically translate the square brackets to angle brackets that we need in the generated C++ code. For a `list`, it will do it because the Py++ transpiler has that configured. But for other types to do it, the type must be listed in a `subscriptable_types.json` file.
 
 If you put a file `.pypp/transpiler_config/subscriptable_types.json` in your project:
 
