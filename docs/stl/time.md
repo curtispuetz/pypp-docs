@@ -5,7 +5,8 @@ The Py++ time standard library is a little different, but still similar, to Pyth
 ## Usage
 
 ```python
-from pypp_python import time, auto
+from pypp_python import auto
+from pypp_python.stl import time
 
 
 def pseudo_fn():
