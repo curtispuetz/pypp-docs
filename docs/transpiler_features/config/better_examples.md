@@ -32,7 +32,6 @@ For the `name_map`, `call_map`, `attr_map`, and  `ann_assign_map`, you can also 
 For example, if we continue with the same `deque` example, we could do:
 
 ```json
-// name_map.json
 {
     "to_string": {
         "deque": {
