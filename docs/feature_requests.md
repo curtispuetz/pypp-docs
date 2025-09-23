@@ -8,7 +8,7 @@ Also, **it will help a lot to give a 'thumbs up' to features that you want to se
 
 ## Current highest priority features
 
-In my mind, these are the highest priority features that should be added to Py++, in an approximate order of imporance. And, I am probably working on them now as you are reading this.
+In my mind, these are the highest priority features that should be added to Py++, in an approximate order of importance. And, I am probably working on them now as you are reading this.
 
 I will keep this list updated
 
