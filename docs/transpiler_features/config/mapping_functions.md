@@ -1,18 +1,17 @@
 # Transpiler config mapping functions
 
 The examples for `name_map`, `call_map`, and `attr_map` on the [examples page](examples.md) showed usage of the `to_string` option. There are two other common options you can use: `custom_mapping` and `custom_mapping_starts_with`. When you use one of these options, you provide
-a Python file with a Python function which is code that you write that returns the string that the Py++ transpiler should translate the statement/expression into.
+a Python file with a Python function, which is code that you write that returns the string that the Py++ transpiler should translate the statement/expression into.
 
-I think these are not completely necessary for integrating C++ libraries, but will often make it much easier to integrate them. 
+I think sometimes it will be necessary to use these for integrating certain C++ libraries. Other times, they can make your transpiler config files shorter because you can use one mapping function instead of many `to_string` items.
 
 [api link](API.md/#custom_mapping_object)
 
 ## Example
 
-For example, if you do:
+For example, if we have a `call_map.json` file:
 
 ```json
-// call_map.json
 {
     "custom_mapping_starts_with": {
         "glfw.": {
@@ -48,7 +47,7 @@ I used something like this when I created a Py++ library for GLFW, because the A
 - Each mapping function file must have one function named `mapping_fn`, as that is the entry point
     - You can put other functions/logic to use in your file to modularize your code, but you cannot import anything you write in other files
 - The mapping function must have the [correct parameters](#input-parameters), in terms of the number of parameters and type.
-- You do not need to import anything in the file
+- You do not need to import anything inside the file
     - The only thing you could import is `ast`, and it doesn't matter if you do that or not
 - The [`Deps` parameter](#the-deps-parameter) has some methods that you can use.
 
@@ -114,7 +113,7 @@ def mapping_fn(cpp_type: str, target: str, value: str, value_inside_parens: str)
 
 ## The `Deps` parameter
 
-This parmeter has some methods on it that you can use. In the above example, I showed the usage of the `handle_exprs` method. There is a good chance you will need the `handle_exprs` method also for whatever you are doing. In this section, will document the methods. Only `handle_expr`, `handle_exprs`, `add_inc`, `value_err`, and `value_err_no_ast` are the ones I think will typically be useful. The others I don't see much use.
+This parameter has some methods on it that you can use. In the above example, I showed the usage of the `handle_exprs` method. There is a good chance you will need the `handle_exprs` method also for whatever you are doing. In this section, I will document the methods. Only `handle_expr`, `handle_exprs`, `add_inc`, `value_err`, and `value_err_no_ast` are the ones I think will typically be useful. The others I don't see much use.
 
 ### handle_expr
 
@@ -142,7 +141,7 @@ def handle_stmts(self, stmts: list[ast.stmt]) -> str
 
 ### add_inc
 
-Will add an include to the corrsponding C++ file
+Will add an include to the corresponding C++ file
 
 ```python
 def add_inc(self, inc: CppInclude) -> None
@@ -157,7 +156,7 @@ d.add_inc(AngInc("glad/gl.h"))  # for angle bracket includes
 
 ### add_incs
 
-Will add includes to the corrsponding C++ file
+Will add includes to the corresponding C++ file
 
 ```python
 def add_incs(self, incs: list[CppInclude]) -> None
@@ -179,7 +178,7 @@ d.is_imported(PyImp("my_module", "my_name"))
 
 ### value_err
 
-Will throw a value error will a good message about what Python file the error originated from and the problem code
+Will throw a value error with a message that includes the Python file from which the error originated and the problem code.
 
 ```python
 def value_err(self, msg: str, ast_node) -> throws ValueError
@@ -193,7 +192,7 @@ d.value_err("Wrong number of arguments found", call_node)
 
 ### value_err_no_ast
 
-Will throw a value error will a good message about what Python file the error originated from
+Will throw a value error with a message that includes the Python file from which the error originated.
 
 ```python
 def value_err_no_ast(self, msg: str) -> throws ValueError
