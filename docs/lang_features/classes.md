@@ -5,13 +5,13 @@ Like Python dataclasses, but magic methods are not supported today.
 ## Declaration
 
 ```python
-from pypp_python import Valu, dataclass
+from pypp_python import Val, dataclass
 
 
 @dataclass
 class Greeter:
     name: str
-    prefix: Valu(str)
+    prefix: Val[str]
 
     def greet(self) -> str:
         return f"Hello, {self.prefix} {self.name}!"

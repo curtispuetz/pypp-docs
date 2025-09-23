@@ -8,11 +8,11 @@ The defaults and type parameters features will be coming soon.
 
 This was mentioned elsewhere, but again:
 - Function parameters that are [primitive types](types/primitive_types.md) are always pass-by-value. 
-- Function parameters that are non-primitive types are pass-by-reference by default, and can be made pass-by-value with `Valu()`.
-- Functions are return-by-value by default, and can be made return-by-reference with `Ref()` for non-primtive types
+- Function parameters that are non-primitive types are pass-by-reference by default, and can be made pass-by-value with `Val[]`.
+- Functions are return-by-value by default, and can be made return-by-reference with `Ref[]` for non-primtive types
 
 ```python
-from pypp_python import int_list, mov
+from pypp_python import int_list, mov, Val, Ref
 from my_type import MyType
 
 
@@ -27,12 +27,12 @@ def repeat_new(a: list[int]) -> list[int]:
 
 
 # pass-by-value
-def my_type_factory(a: Valu(list[int])) -> MyType:
+def my_type_factory(a: Val[list[int]]) -> MyType:
     return MyType(mov(a))
 
 
 # return-by-reference
-def repeat(a: list[int]) -> Ref(list[int]):
+def repeat(a: list[int]) -> Ref[list[int]]:
     a *= 2
     return a
 
@@ -63,7 +63,7 @@ def pseudo_fn():
 
     # return-by-reference
     c: list[int] = [1, 2]
-    c_ref: Ref(list[int]) = repeat(c)
+    c_ref: Ref[list[int]] = repeat(c)
 ```
 
 ## Void functions
