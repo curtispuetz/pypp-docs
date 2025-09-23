@@ -1,6 +1,6 @@
 # Built-in functions
 
-Similar to Python built-in functions. Most of the common Python built-in functions are supported.
+Similar to Python built-in functions. Lots of the common Python built-in functions are supported.
 
 Note: Any function which does not have to be imported or is imported from `pypp_python` is referred to as a "built-in function".
 
@@ -31,7 +31,7 @@ Note: Any function which does not have to be imported or is imported from `pypp_
 - `str`
 - `bool`
 
-### `str` operators
+### for strings
 
 - `to_std_string`
 - `to_c_string`
@@ -80,16 +80,14 @@ For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](fo
 - `lg`
 - `ug`
 
-## Union operators
+## Union functions
 
 - `isinst`
 - `is_none`
 
-## Ownership utilities
+## Memory management tools
 
 - `mov`
-- `Ref`
-- `Val`
 
 ## Resources
 

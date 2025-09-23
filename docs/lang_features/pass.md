@@ -15,5 +15,4 @@ def pseudo_fn():
 @dataclass
 class ClassB:
     pass
-
 ```
