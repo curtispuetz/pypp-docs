@@ -2,7 +2,7 @@
 
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
-I came up with a set of rules that can be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. For that reason, if you follow these rules, then I am thinking you can reason about your code as if it is Python code, which should make Py++ easier to use. 
+I came up with a set of rules that can be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. For that reason, if you follow these rules, then I am thinking you can reason about your code as if it were Python code, which should make Py++ easier to use. 
 
 If we get to a point where the Py++ transpiler throws errors for each of these rules, when broken, then we might be able to say the code will always run the same via C++ and Python. Right now, none of these rules, when broken, throw transpiler errors.
 
