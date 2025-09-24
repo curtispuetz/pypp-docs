@@ -4,7 +4,7 @@
 
 The best way to contribute to Py++ is to make libraries that integrate functionality into the language. This is something that you can do independently and have ownership of, without any of your work needing to be approved by me.
 
-Some features that you could try creating a library for
+Some features that you could try creating a library for, because I think these would be nice to have:
 
 - `Path` from `pathlib`
 - `deque` from `collections`
@@ -14,7 +14,7 @@ Some features that you could try creating a library for
 - features in the Python `functools` library
 - features from `fnmatch`
 - To summarize above, **any features from any of the Python standard libraries**
-    - Obviously, not everything would be possible at the moment, but hopefully, a good number of things are.
+    - Obviously, not everything will be possible at the moment, but hopefully, a good number of things are.
         - Anything in Py++ that is not possible at the moment but should be (for example, multi-threading/processing) is something that I or other contributors will be working on
             - It would also be really helpful if you provided feedback to us about what is missing that you need
 - A unit testing library
@@ -27,17 +27,18 @@ Some features that you could try creating a library for
 
 ## Creating Py++ processes
 
-Another best way to contribute now, which are again things you can do independently and have ownership of:
+Another best way to contribute now, which are again things you can do independently and have ownership of, is by creating Py++ processes.
+
+Some things that I had in my mind:
 
 - To make a project for testing Py++
     - Whenever a new candidate Py++ version is released, we can run your tests against the new version
 - To make a project for benchmarking Py++, to ensure things are equal in performance to C++
     - Like above, whenever a new candidate Py++ version is released, we can run your benchmarks against it
 
-
 ## Contributing with thoughtful ideas
 
-Probably the next best way to contribute besides the above is to give advice and opinions about what should be improved in the language (identifying [bugs](bug_reports.md), and missing [features](feature_requests.md), bad design choices, etc).
+Probably the next best way to contribute besides the above is to give advice and opinions about what should be improved in the language (identifying [bugs](bug_reports.md), missing [features](feature_requests.md), bad design choices, etc).
 
 Said another way: providing thoughtful and well-explained opinions and suggestions about anything related to the project (e.g. Language design decisions, what features are important to be added to the project, anything in the project [CLI/transpiler source code](https://github.com/curtispuetz/pypp-cli), anything in the projects [C++ template project](https://github.com/curtispuetz/pypp-cpp-dev), etc.)
 
@@ -87,6 +88,8 @@ I will explain my philosophy for contributions so that it makes more sense why I
 - Become more competent and skilled
 - Produce higher quality work
 
-This is why I see most Py++ code contributors' responsibility should be to make excellent Py++ libraries, which they have ownership of. It's because I want the Py++ project to be successful (i.e. high-quality work done) and also because I want the contributors to feel like their time is well spent. Then, I see my responsibility to be for the CLI/transpiler and C++ template code. Specifically, to maintain the code, fix bugs, and implement new CLI and Language features.
+This is why I see most Py++ code contributors' responsibility should be to make excellent Py++ libraries, which they have ownership of. It's because I want the Py++ project to be successful (i.e. high-quality work done) and also because I want the contributors to feel like their time is well spent. 
 
-That being said, since you would be working on Py++ as a hobby, **you should work on what you want to work on.** If you are interested in working on Py++ source code, you can, as I described above.
+I see my responsibility to be for the CLI/transpiler and C++ template code. Specifically, to maintain the code, fix bugs, and implement new CLI and Language features.
+
+That being said, since you would be working on Py++ as a hobby, **you should work on what you want to work on.** If you are interested in helping me with the Py++ source code, that is great, and see the [section above](#contributing-to-the-py-source-code).
