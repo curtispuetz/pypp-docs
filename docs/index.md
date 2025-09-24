@@ -7,6 +7,7 @@ A good way to think about Py++ is that you are effectively writing C++ code, but
 ## What is the purpose? Why not just write code in C++?
 
 The main purpose is to shorten the amount of code you need to write to do the same thing and to make the code more readable, easy to understand, and work with (i.e. all the advantages of Python). These things have been accomplished because:
+
 - The code of Py++ is much shorter than the C++ code you would have to write for the same thing
 - Py++ limits the number of features available to a set of features that is Python-like
 - **You can almost reason about your code as if it were Python code**, so that if you are used to Python code, the difference from Python to Py++ code is very minimal
