@@ -6,15 +6,15 @@ In the future, we can create a Py++ foundation if there is interest. There is no
 
 ## Support me
 
-I will tell you what your money will be going to if you donate to me, the lead and sole developer on the project so far.
+I will tell you what your money will be going to if you donate to me, the lead and sole developer on the Py++ project so far.
 
-So you can understand, I'll give a little bit of backstory to myself.
+I'll give a little bit of backstory to myself.
 
 I quit my well-paying software engineering job with AWS in June 2024 because I wanted to work on projects that I felt could be of a lot more usefulness to people, and because I knew that working on challenging projects would do much more for developing my software engineering/programming skills. I am very much obsessed with innovative and useful technology, and with doing excellent work.
 
-So, if you do choose to donate, you will be supporting me so I can continue on my mission of making innovative, useful technology and doing excellent work. In the near term, you will be supporting my work on Py++, because if I do get donations, it will be a hint for me to focus my energy on Py++. I have already put 3.5 months of free full-time energy into this project, and I will continue that for the foreseeable future.
+So, if you do choose to donate, **you will be supporting me so I can continue on my mission of making innovative, useful technology for people and doing excellent work**. In the near term, you will be supporting my work on Py++, because if I do get donations, it will be a hint for me to continue to focus my energy on Py++. I have been putting my free full-time energy into this project since June 1st 2025, and I will continue that for the foreseeable future.
 
-In addition, you will be indirectly supporting future projects of mine that will, of course, aim to be the same thing: innovative, useful, and excellent. In the next section, I've listed some of the future projects I am debating in my head at the moment.
+In addition, you will be indirectly supporting future projects of mine that will, of course, aim to be the same thing: innovative, useful, and excellent. In the [below section](#potential-future-projects), I've listed some of the future projects I am debating at the moment.
 
 ### My current financial situation
 
@@ -22,11 +22,28 @@ I currently have no income, and my wife is unemployed without fantastic job pros
 
 ### My social media
 
-TODO social media
+- [X.com](https://x.com/curtispuetz)
+- [Reddit](https://www.reddit.com/user/joeblow2322/)
+- [github](https://github.com/curtispuetz)
+
+
 
 ### My donation links
 
-TODO links to donate
+#### PayPal
+
+- [USD](https://www.paypal.com/donate/?hosted_button_id=AULDXVU3FRB22)
+- [EUR](https://www.paypal.com/donate/?hosted_button_id=7EPBYJSMGTYBQ)
+- [All other currencies](https://www.paypal.com/donate/?hosted_button_id=CSVAS56KK4WVN)
+
+If you are donating in USD or EUR, it's best to use those links because I can take the USD or EUR and convert them to my home currency of CAD at a better rate than PayPal offers (with Wise). For any other currency, it's best to use the last link because I get the donation in my home currency.
+
+#### Ko-fi
+
+https://ko-fi.com/curtispuetz
+
+Also works through PayPal, but is more of a social platform.
+
 
 ### Potential future projects
 
