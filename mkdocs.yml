@@ -63,8 +63,8 @@ nav:
       - config classes: lang_features/config_classes.md
       - exceptions:
         - handling: lang_features/exceptions/handling.md
-        - defining your own: lang_features/exceptions/defining.md
         - raising: lang_features/exceptions/raising.md
+        - defining your own: lang_features/exceptions/defining.md
         - supported types: lang_features/exceptions/supported_types.md
       - resources: lang_features/resources.md
       - file I/O: lang_features/file_io.md

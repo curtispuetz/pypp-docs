@@ -2,4 +2,5 @@
 
 Here is a list of Py++ libraries
 
-- TODO: GLFW and OpenGL
+- https://github.com/curtispuetz/pypp-glfw
+- https://github.com/curtispuetz/pypp-opengl

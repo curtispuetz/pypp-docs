@@ -26,8 +26,6 @@ I currently have no income, and my wife is unemployed without fantastic job pros
 - [Reddit](https://www.reddit.com/user/joeblow2322/)
 - [github](https://github.com/curtispuetz)
 
-
-
 ### My donation links
 
 #### PayPal
@@ -43,7 +41,6 @@ If you are donating in USD or EUR, it's best to use those links because I can ta
 https://ko-fi.com/curtispuetz
 
 Also works through PayPal, but is more of a social platform.
-
 
 ### Potential future projects
 
