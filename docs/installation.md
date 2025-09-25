@@ -17,7 +17,7 @@ If you are using `clang`, you will also need `ninja` installed. This can be inst
 If you want to format your generated C++ code, you will need `clang-format` installed. If you already have the `clang` compiler installed, you likely have `clang-format` already (another reason why I recommend `clang`). If not, you can install `clang-format` separately.
 
 
-## Compatible versions
+## Known compatible versions
 
 - Python - 3.13.7
 - CMake - 4.1.1
@@ -38,4 +38,22 @@ This should print the 'hello world' message to the terminal.
 
 ### If you are not using `clang`
 
-If you are not using `clang`, you can do `pypp do transpile format`, and then do the required CMake commands in the C++ directory (`.pypp/cpp`) yourself and run the executable.
+If you are not using `clang`, you can do `pypp do transpile format`, and then do the required CMake commands in the C++ directory (i.e. `.pypp/cpp`) yourself and run the executable.
+
+## Final step for your project
+
+Once you have the hello world program working, for your Py++ project, I recommend creating a virtual environment and installing `pypp-python` to the virtual environment. This will help with IntelliSense on your IDE, and if you want to run your code with the Python interpreter, you will need this.
+
+I also recommend to call the virtual environment `.venv`, because if you are going to use Py++ external libraries, the virtual environment must be called `.venv`.
+
+To create a virtual environment (run this at the root of your project at the same level as the `.pypp` directory):
+
+```text
+python -m venv .venv
+```
+
+After activating your virtual environment, to install `pypp-python`:
+
+```text
+pip install pypp-python
+```

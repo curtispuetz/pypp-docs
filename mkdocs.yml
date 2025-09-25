@@ -98,6 +98,7 @@ nav:
   - Advanced topics:
       - Making Py++ easier and reducing undefined behavior: advanced/making_pypp_easier.md
   - Contributing to Py++: contributing.md
+  - FAQ: faq.md
   - Easter eggs: easter_eggs.md
   - Contact us: contact.md
   - Donate: donate.md
