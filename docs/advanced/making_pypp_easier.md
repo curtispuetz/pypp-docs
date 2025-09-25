@@ -1,6 +1,6 @@
 # Making Py++ easier and reducing undefined behavior
 
-Note: its not recommended to read this page before you've read [memory ownership tools](../lang_features/memory_ownership_tools.md). Furthermore, this is an advanced topic that you could come back to later after you know a little more about Py++, and have maybe experienced situations where your Py++ code runs differently via C++ vs. Python (thats my light recommendation). However, if you are very interested in programming language design, this page might be interesting for you early on.
+Note: it's not recommended to read this page before you've read [memory ownership tools](../lang_features/memory_ownership_tools.md). Furthermore, this is an advanced topic that you could come back to later after you know a little more about Py++, and have maybe experienced situations where your Py++ code runs differently via C++ vs. Python (that's my light recommendation). However, if you are very interested in programming language design, this page might be interesting for you early on.
 
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
