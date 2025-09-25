@@ -1,6 +1,6 @@
 # Welcome to the Py++ docs
 
-Py++ is a programming language that is as performant as C++ but is easier to use and learn. It is written with Python syntax, which is transpiled to C++ code and then a C++ compiler is used. It is statically typed and requires manual memory management.
+Py++ is a programming language that is as performant as C++ but is easier to use and learn. It is written with Python syntax, which is transpiled to C++ code, and then a C++ compiler is used. It is statically typed and requires manual memory management.
 
 A good way to think about Py++ is that you are effectively writing C++ code, but with a different Python-style syntax and a subset of the C++ features.
 
@@ -12,7 +12,7 @@ The main purpose is to shorten the amount of code you need to write to do the sa
 - Py++ limits the number of features available to a set of features that is Python-like
 - **You can almost reason about your code as if it were Python code**, so that if you are used to Python code, the difference from Python to Py++ code is very minimal
     - For now, there is a short set of rules where if you follow them in your code, then you should be able to reason about your Py++ code like it is actually Python
-        - I recommend looking at the mentioned [rules](advanced/making_pypp_easier.md#rules) a little later in your journey of learning the language and not for now
+        - I recommend looking at the mentioned [rules](advanced/making_pypp_easier.md#rules) a little later in your journey of learning the language, and not for now
     - In the future, we will try to throw transpiler errors when you break any of the rules
 
 
@@ -56,7 +56,7 @@ It's a program that lets you transpile Py++ code to C++. And from there, you jus
     - The code clearly can't just be any Python code (it's statically typed and requires manual memory management)
     - When you do something that isn't supported, you will ideally either get an error from the Py++ transpiler or an error from your C++ compiler
         - The transpiler errors are very clear about what code is wrong
-        - It is not so hard to coorelate the C++ compiler errors with your Py++ source code, especially if you are familiar with C++ compiler errors
+        - It is not so hard to correlate the C++ compiler errors with your Py++ source code, especially if you are familiar with C++ compiler errors
 
 And a few other points:
 
