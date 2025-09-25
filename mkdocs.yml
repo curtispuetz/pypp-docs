@@ -29,7 +29,7 @@ nav:
   - Feature requests: feature_requests.md
   - Bug reports: bug_reports.md
   - Language features:
-      - manual memory management (Ref, Val, and mov): lang_features/manual_memory_management.md
+      - memory ownership tools (Ref, Val, and mov): lang_features/memory_ownership_tools.md
       - types:
         - list: lang_features/types/list.md
         - set: lang_features/types/set.md

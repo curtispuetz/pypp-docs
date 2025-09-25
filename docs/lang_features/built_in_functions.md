@@ -85,7 +85,7 @@ For usage of `range`, `enumerate`, `reversed`, and `zip`, see [for loop page](fo
 - `isinst`
 - `is_none`
 
-## Memory management tools
+## Memory ownership tools
 
 - `mov`
 

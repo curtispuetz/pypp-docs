@@ -49,9 +49,9 @@ int main() {
 
 You must use Python-style type hints everywhere. I.e. for variable definitions, function parameters, class data members, and return types.
 
-## Memory management
+## Memory ownership tools
 
-At this point, you should read the page on [memory management](lang_features/manual_memory_management.md). Then, I invite you to come back and look at the examples below, which show some common Py++ code and how the Py++ transpiler translates this code to C++.
+At this point, you should read the page on [memory ownership tools](lang_features/memory_ownership_tools.md). Then, I invite you to come back and look at the examples below, which show some common Py++ code and how the Py++ transpiler translates this code to C++.
 
 ## Examples
 
