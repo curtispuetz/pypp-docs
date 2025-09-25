@@ -11,8 +11,8 @@ The main purpose is to shorten the amount of code you need to write to do the sa
 - The code of Py++ is much shorter than the C++ code you would have to write for the same thing
 - Py++ limits the number of features available to a set of features that is Python-like
 - **You can almost reason about your code as if it were Python code**, so that if you are used to Python code, the difference from Python to Py++ code is very minimal
-    - For now, there is a short set of [rules](advanced/making_pypp_easier.md#rules) where if you follow them in your code, then you should be able to reason about your Py++ code like it is actually Python
-        - I recommend looking at these rules a little later in your journey of learning the language and not now
+    - For now, there is a short set of rules where if you follow them in your code, then you should be able to reason about your Py++ code like it is actually Python
+        - I recommend looking at the mentioned [rules](advanced/making_pypp_easier.md#rules) a little later in your journey of learning the language and not for now
     - In the future, we will try to throw transpiler errors when you break any of the rules
 
 
@@ -51,10 +51,12 @@ You are now ready to start learning about the specifics of the language. Before 
 It's a program that lets you transpile Py++ code to C++. And from there, you just have a normal C++ CMake project, so you are set now to build and run your code with CMake. Also:
 
 - Your Py++ code is valid Python code, so you can alternatively run it with the Python interpreter. 
-- Your Py++ code has to follow certain rules and conventions to work (this is different from the [rules](advanced/making_pypp_easier.md#rules) mentioned already above)
-    - The code clearly can't just be any Python code (it's statically typed and requires manual memory management)
-    - When you break a rule or convention, you will ideally either get an error from the Py++ transpiler or an error from your C++ compiler.
 - The generated C++ code is human-readable, corresponding very closely to your Py++ code files, folders, and logic.
+- Your Py++ code has restrictions (this is different from the [rules](advanced/making_pypp_easier.md#rules) mentioned already above)
+    - The code clearly can't just be any Python code (it's statically typed and requires manual memory management)
+    - When you do something that isn't supported, you will ideally either get an error from the Py++ transpiler or an error from your C++ compiler
+        - The transpiler errors are very clear about what code is wrong
+        - It is not so hard to coorelate the C++ compiler errors with your Py++ source code, especially if you are familiar with C++ compiler errors
 
 And a few other points:
 

@@ -1,5 +1,7 @@
 # Making Py++ easier and reducing undefined behavior
 
+Note: its not recommended to read this page before you've read [memory ownership tools](../lang_features/memory_ownership_tools.md). Furthermore, this is an advanced topic that you could come back to later after you know a little more about Py++, and have maybe experienced situations where your Py++ code runs differently via C++ vs. Python (thats my light recommendation). However, if you are very interested in programming language design, this page might be interesting for you early on.
+
 I mentioned in the [index page](../index.md) that Py++ would aspire to throw transpiler errors for programs that lead to undefined behavior and programs which run differently via the C++ executable vs. the Python interpreter.
 
 I came up with a set of rules that can be followed, where if you follow them, then your code will run the same via the C++ executable and Python interpreter. For that reason, if you follow these rules, then I am thinking you can reason about your code as if it were Python code, which should make Py++ easier to use. 
@@ -10,7 +12,7 @@ If I am missing any rules, i.e. there are other ways you can get code that runs 
 
 ## Rules
 
-- Only reassign a variable which is an owner and has no references
+- Only reassign a variable which is an owner and has no live references
 - For a function/method parameter that is pass-by-value, only pass temporaries or use `mov()`
 - For a class data member that is pass-by-value, only pass temporaries or use `mov()` (similar to above)
 - After doing `mov(v)`, do not use `v`
@@ -23,7 +25,7 @@ If I am missing any rules, i.e. there are other ways you can get code that runs 
 
 ## Examples of each rule
 
-### Only reassign a variable which is an owner and has no references
+### Only reassign a variable which is an owner and has no live references
 
 ```python
 from pypp_python import dataclass
@@ -36,10 +38,10 @@ class ClassA:
 
 if __name__ == "__main__":
     my_list: list[int] = [1, 2, 3]
-    my_list = [2, 3, 4]  # OK
+    my_list = [2, 3, 4]  # OK because it is the owner
     object_a: ClassA = ClassA(my_list)
-    object_a.my_list = [4, 5, 6]  # ❌ it is not the original
-    my_list = [7, 8, 9]  # ❌ it is the original, but it has a reference
+    object_a.my_list = [4, 5, 6]  # ❌ it is not the owner
+    my_list = [7, 8, 9]  # ❌ it is the owner, but it has a live reference
 ```
 
 ### For a function/method parameter that is pass-by-value, only pass temporaries or use `mov()`
@@ -141,7 +143,7 @@ if __name__ == "__main__":
 
     my_list_2: list[int] = [1, 2, 3]
     my_list_2_ref: Ref[list[int]] = my_list_2
-    object_a1: auto = class_a_factory(mov(my_list_2))  # ❌ my_list_2 is the original, but it has a reference
+    object_a1: auto = class_a_factory(mov(my_list_2))  # ❌ my_list_2 is the owner, but it has a reference
 ```
 
 ### Do not end the lifetime of an owner if the owner has any living references 
