@@ -13,7 +13,7 @@ Some things that are imported from `pypp_python` that are not functions, we can 
 - `configclass`
 - `exception`
 
-## Memory management tools
+## Memory ownership tools
 
 - `Ref`
 - `Val`
