@@ -1,5 +1,15 @@
 # FAQ
 
+## How do you justify the performance claim that Py++ is as performant as C++? Why is it true?
+
+I'll explain it with an example, and this example will just get your mind geared so that you can see it my way, and then I'll explain it more abstractly at the end.
+
+Say you are going to solve a problem in Py++ code, and say you write like 300 lines of code for it and you are done. Then say, you want to solve the same problem, but this time you are going to write C++ code. In the C++ code, you are going to write the same stuff as you wrote in the Py++ code (unless there is features in C++ for this problem that you want to use which are not in Py++). In the C++ code, for example, you will use `std::vector` instead of `list` and stuff like that, and you'll have the same functions and files and classes, because there is no reason to do it differently this time. Now here is the big point: if you wrote your C++ code this way (i.e. copying the architecture from your Py++ solution), what you wrote is going to be basically the same C++ code that the Py++ transpiler generated. This is because the Py++ transpiler translates Py++ code statements and expressions 1:1 to C++ code statements and expressions.
+
+You can do enough of the same things in Py++ that you can do in C++, and you do them in the same way. For example, Py++ has [memory ownership tools](lang_features/memory_ownership_tools.md), like C++. 
+
+So the general conclusion is: it is generally true that Py++ is as performant as C++ in the runtime for the same problem, with the slight caveat being that C++ has some features, which Py++ doesn't have, where in uncommon cases can make it more performant for a problem. However, if any of these features start to show themselves as being relatively common or important, they will be added to Py++.
+
 ## Can the Py++ transpiler help me convert my Python project to a C++ project?
 
 Not unless you convert your project's Python code to Py++ code first, because the Py++ transpiler only transpiles Py++ code. (Remember, even though Py++ code is valid Python code, there are restrictions in Py++ code.)
