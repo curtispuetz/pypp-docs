@@ -4,7 +4,7 @@ Py++ is a programming language that is as performant as C++ but is easier to use
 
 A good way to think about Py++ is that you are effectively writing C++ code, but with a different Python-style syntax and a subset of the C++ features.
 
-**NOTE**: The Py++ project is on hold right now while I try to stabilize my finances by developing a video game. I hope that I can come back to Py++ later as it is one of my lifes favorite projects, if not favorite. The current released version is a working programming language that can do anything that C++ can do.
+**NOTE**: The Py++ project is on hold right now while I try to stabilize my finances by developing a video game. I hope that I can come back to Py++ later, as it is one of my life's favorite projects, if not my favorite. The current released version is a working programming language that can do anything that C++ can do.
 
 ## What is the purpose? Why not just write code in C++?
 
